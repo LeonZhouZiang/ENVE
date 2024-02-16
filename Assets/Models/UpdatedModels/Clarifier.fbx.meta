@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Steel
-    second: {fileID: 2100000, guid: e23dca8903d173844a084bcbf323d19f, type: 2}
+    second: {fileID: 2100000, guid: e8fe317aabf9f2c44a473178552cc66b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Zinc
-    second: {fileID: 2100000, guid: 40cf8a9e693576f488bb48548b25c932, type: 2}
+    second: {fileID: 2100000, guid: 28fcf2d5b446891498483c9d92af30ab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
