@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 1315870140746859468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6473743283590487562}
@@ -434,7 +434,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4404839247605695133, guid: 6ff2f1e0ef17d534e94afb16bc8de6f9, type: 3}
+  - {fileID: 2100000, guid: 57e580974ea13654ea226f9d90bc672a, type: 2}
   - {fileID: 2100000, guid: 40cf8a9e693576f488bb48548b25c932, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 2555735279049269022}
   - component: {fileID: 6903543540969579670}
   - component: {fileID: 134657327983997825}
+  - component: {fileID: 4705647516734595912}
   m_Layer: 0
   m_Name: SludgeTruss
   m_TagString: Untagged
@@ -541,6 +542,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4705647516734595912
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171024049985769375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a990dcf907cdbd34991fcf1112c795ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5301834973164049545
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +906,7 @@ GameObject:
   - component: {fileID: 2569592712834233936}
   - component: {fileID: 924913703575498465}
   - component: {fileID: 7793581983116444125}
+  - component: {fileID: 8262940656323741197}
   m_Layer: 0
   m_Name: EnergyDissipatingInlet
   m_TagString: Untagged
@@ -958,6 +980,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8262940656323741197
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170531433065546021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92687865ebca0e747abcf40b643ff922, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8452368809376055005
 GameObject:
   m_ObjectHideFlags: 0
