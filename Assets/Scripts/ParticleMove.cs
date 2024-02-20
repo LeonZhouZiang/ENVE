@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParticleMove : MonoBehaviour
 {
     private Rigidbody rb;
-    [SerializeField] private float bouyancy = 10, drag = .95f;
+    [SerializeField] private float bouyancy = 10, drag = .95f, waterHeight = 1.5f;
     [SerializeField] private Vector2 flowForce = Vector2.zero;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class ParticleMove : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity *= drag;
-        if (transform.position.y < 1.5f)
+        if (transform.position.y < waterHeight)
         {
             rb.AddForce(new Vector3(flowForce.x, bouyancy, flowForce.y));
         }
