@@ -43,6 +43,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DirectionRaidus: 0
     - _Height: 0
     - _MaxHeight: 1
     - _MinHeight: 0
@@ -54,6 +55,7 @@ Material:
     - _T: -9.3
     m_Colors:
     - _Color: {r: 0.08321467, g: 0.21579522, b: 0.3207547, a: 0.7372549}
+    - _Direction: {r: 1.54, g: 0, b: 0, a: 0}
     - _StartPos: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &262931219119873146
