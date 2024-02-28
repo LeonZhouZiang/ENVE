@@ -1361,6 +1361,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterClarifierInside
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 376dca00eba54d34fa7072efae2334b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 376dca00eba54d34fa7072efae2334b0, type: 3}
 --- !u!1001 &1388199045
@@ -2693,6 +2698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WaterClarifierOutside
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2880d992febf4034ab22000fff9b5c05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2880d992febf4034ab22000fff9b5c05, type: 3}
