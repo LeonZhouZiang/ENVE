@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouyancy: 15
   drag: 0.99
-  waterHeight: 1.5
+  waterHeight: 2.212936
   flowForce: {x: 0.01, y: 0.25}
 --- !u!64 &329814457817128931
 MeshCollider:

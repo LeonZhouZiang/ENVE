@@ -129,5 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouyancy: 15
   drag: 0.99
-  waterHeight: 1.5
+  waterHeight: 7
   flowForce: {x: 0, y: 0}
