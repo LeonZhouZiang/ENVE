@@ -61,9 +61,6 @@ public class ProgressManager : MonoBehaviour
 
             mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[0].position, cameraPositionWWTP[0].rotation);
         }
-
-        ModelParts.Instance.CheckWaterfall();
-        ModelParts.Instance.CheckBubble(-1);
     }
 
     #region WWTP

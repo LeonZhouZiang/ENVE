@@ -14,8 +14,6 @@ public class ModelParts : MonoBehaviour
     public GameObject[] WWTPModel;
     public GameObject[] WTPModel;
 
-    public Material transparent;
-    public Material defaultMaterial;
     [Header("Components")]
     public GameObject bubbles;
     public GameObject[] WWTPWaterfalls;
@@ -28,104 +26,46 @@ public class ModelParts : MonoBehaviour
         
     }
 
-    public void ChangeMaterial(int i)
+    public void ChangeMaterial(int index)
     {
         if (WWTP)
         {
-            foreach(var mat in WWTPModel[i].GetComponentsInChildren<MeshRenderer>())
+            for(int i = 0; i < WWTPModel.Length; i++)
             {
-                if (!mat.gameObject.CompareTag("NoneTransparent"))
-                    mat.material = transparent;
+                WWTPModel[i].layer = LayerMask.NameToLayer("Outline");
             }
         }
         else
         {
-            foreach (var mat in WTPModel[i].GetComponentsInChildren<MeshRenderer>())
+            for (int i = 0; i < WTPModel.Length; i++)
             {
-                if(!mat.gameObject.CompareTag("NoneTransparent"))
-                    mat.material = transparent;
+                WTPModel[i].layer = LayerMask.NameToLayer("Outline");
             }
         }
-        CheckBubble(i);
-        CheckWaterfall();
+
     }
 
     public void RestoreMaterials()
     {
         if (WWTP)
         {
-            foreach(var part in WWTPModel)
+            for (int i = 0; i < WWTPModel.Length; i++)
             {
-                foreach (var mat in part.GetComponentsInChildren<MeshRenderer>())
-                {
-                    if (!mat.gameObject.CompareTag("NoneTransparent"))
-                        mat.material = defaultMaterial;
-                }
+                WWTPModel[i].layer = LayerMask.NameToLayer("Default");
             }
         }
         else
         {
-            foreach (var part in WTPModel)
+            for (int i = 0; i < WTPModel.Length; i++)
             {
-                foreach (var mat in part.GetComponentsInChildren<MeshRenderer>())
-                {
-                    if (!mat.gameObject.CompareTag("NoneTransparent"))
-                        mat.material = defaultMaterial;
-                }
+                WTPModel[i].layer = LayerMask.NameToLayer("Default");
             }
         }
     }
 
-    public void CheckBubble(int i)
-    {
-        if(WWTP && i == 2)
-        {
-            bubbles.SetActive(true);
-        }
-        else
-        {
-            bubbles.SetActive(false);
-        }
-    }
-
-    public void CheckWaterfall()
-    {
-        if (WWTP)
-        {
-            foreach(var o in WWTPWaterfalls)
-            {
-                o.SetActive(true);
-            }
-            foreach(var o in WTPWaterfalls)
-            {
-                o.SetActive(false);
-            }
-        }
-        else
-        {
-            foreach (var o in WWTPWaterfalls)
-            {
-                o.SetActive(false);
-            }
-            foreach (var o in WTPWaterfalls)
-            {
-                o.SetActive(true);
-            }
-        }
-    }
 
     public void PlayAnimation(int index)
     {
-        if (!WWTP)
-        {
-            switch (index)
-            {
-                case 6:
-                    contactChloroTankWaterAnimation.Play("chloro tank water flow", 0, 0f);
-                    break;
-
-            }
-
-        }
+        
     }
 }
