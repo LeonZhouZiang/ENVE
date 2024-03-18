@@ -227,10 +227,11 @@ public class ProgressManager : MonoBehaviour
     }
     #endregion
 
+    public float cameraSmoothTime = 2;
     void SmoothCamera(Vector3 position, Quaternion rotation)
     {
-        StopCoroutine(MoveCamera(position, rotation, 2));
-        StartCoroutine(MoveCamera(position, rotation, 2));
+        StopAllCoroutines();
+        StartCoroutine(MoveCamera(position, rotation, cameraSmoothTime));
     }
 
     IEnumerator MoveCamera(Vector3 targetPosition, Quaternion targetRotation, float duration)
