@@ -23,8 +23,36 @@ public class ProgressManager : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        Starting();
     }
 
+    void Starting()
+    {
+        if (WWTP)
+        {
+            ModelParts.Instance.WWTP = true;
+           
+            WWTPModel.SetActive(true);
+            WWTPButtons.SetActive(true);
+
+            WTPModel.SetActive(false);
+            WTPButtons.SetActive(false);
+
+            mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[0].position, cameraPositionWWTP[0].rotation);
+            Debug.Log(cameraPositionWWTP[0].position);
+        }
+        else
+        {
+            ModelParts.Instance.WWTP = false;
+            WTPModel.SetActive(true);
+            WTPButtons.SetActive(true);
+
+            WWTPModel.SetActive(false);
+            WWTPButtons.SetActive(false);
+
+            mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[0].position, cameraPositionWTP[0].rotation);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -71,7 +99,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(0);
 
         progress = 0;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
+        SmoothCamera(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
         description.text = "Bar grit chamber: used to remove large objects and dense inorganic particles(sand, glass, debris) present in raw wastewater.Such objects can damage parts screens.";
     }
 
@@ -81,7 +109,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(1);
 
         progress = 1;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
+        SmoothCamera(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
         description.text = "Primary Settling Tank: used to remove particles that either settle or float using mechanical scrapers and pumps.At the bottom of the tank, primary sludge (waste stream) is collected and routed to the biosolids processing system(shown as the waste container in the schematic).";
     }
 
@@ -91,7 +119,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(2);
 
         progress = 2;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
+        SmoothCamera(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
         description.text = "Aeration Tank: air (oxygen) is added to this tank at the bottom (using bubble diffusers) to provide adequate mixing of primary effluent and activated sludge(called mixed liquor) and supply oxygen needed for microbes to break downorganic matter & grow.This is a biological process performed by aerobic ";
     }
 
@@ -101,7 +129,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(3);
 
         progress = 3;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
+        SmoothCamera(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
         description.text = "Secondary Settling Tank: the activated sludge containing large microbial biomass is settled in this tank.Part of the flow is recycled to the aeration tank(RAS ¨C recycled activated sludge) to provide sufficient microbial population whilethe remaining is collected and sent to the biosolids processing system(WAS ¨Cwaste activated sludge).";
     }
 
@@ -111,7 +139,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(4);
 
         progress = 4;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
+        SmoothCamera(cameraPositionWWTP[progress].position, cameraPositionWWTP[progress].rotation);
         description.text = "UV Disinfection: pathogenic microbes remaining in treated water are inactivated using high-energy lamps that emit UV radiation.The water flows perpendicular tolongitudinal UV lamps. The UV photons damage the genetic material of virusesand other microbes present in wastewater.";
     }
     #endregion
@@ -123,7 +151,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(0);
 
         progress = 0;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Storage tank for coagulant chemicals: used to store aluminum sulfate (alum), iron(II) sulfate, or other chemical coagulant. It will be mixed with source waterinside the coagulation tank.";
     }
 
@@ -133,7 +161,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(1);
 
         progress = 1;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Coagulation tank: tank where the coagulant chemical(clarifying agent) will be rapidly mixed with the source water for a short period using a motor andpropeller.Small flocs start to form by forcing small particles to stick together(viachemical and physical actions) with the aid of the coagulant.";
     }
 
@@ -143,7 +171,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(2);
 
         progress = 2;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Flocculation tank: slow and gentle mixing tank where particles & small flocs are allowed to collide, adhere to one another, and grow to large flocs. The watertravels through a baffled tank system and stays in this tank for a relatively longperiod to promote sufficient flocculation(floc growth).";
     }
 
@@ -153,7 +181,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(3);
 
         progress = 3;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Sedimentation tank (Horizontal flow clarifier): this is a settling tank where the large flocs from the flocculation tank settle out at the bottom(sludge zone).Settled flocs are removed periodically using a scraper arm(not shown) andsludge collection trough. Water flows slowly here and resides in the tank for > 3hrs.";
     }
 
@@ -163,7 +191,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(4);
 
         progress = 4;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Filtration tanks: water flows slowly from the top of the tank to the bottom through a bed of granular porous media(not shown) & particles get trapped dueto physical separation(adhesion, interception &straining).";
     }
 
@@ -173,7 +201,7 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(5);
 
         progress = 5;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Chlorine Chemical Storage Tank: this is used to store disinfectant chemicals(typically chlorine).Chlorine is a toxic gas and should be carefully stored.";
     }
 
@@ -181,10 +209,10 @@ public class ProgressManager : MonoBehaviour
     {
         ModelParts.Instance.RestoreMaterials();
         ModelParts.Instance.ChangeMaterial(6);
-        ModelParts.Instance.PlayAnimation(6);
+        //ModelParts.Instance.PlayAnimation(6);
 
         progress = 6;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Chlorination Contact Tank: the water from the filtration tank is mixed with chlorine disinfectant inside this baffled tank. Chlorine is a strong disinfectant thatkills pathogenic microbes(such as bacteria and viruses) present in water for safehuman consumption.";
     }
 
@@ -194,8 +222,34 @@ public class ProgressManager : MonoBehaviour
         ModelParts.Instance.ChangeMaterial(7);
 
         progress = 7;
-        mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
+        SmoothCamera(cameraPositionWTP[progress].position, cameraPositionWTP[progress].rotation);
         description.text = "Storage tank: finished clean water is stored at the end of the treatment process nbefore distribution to the local community.";
     }
     #endregion
+
+    void SmoothCamera(Vector3 position, Quaternion rotation)
+    {
+        StopCoroutine(MoveCamera(position, rotation, 2));
+        StartCoroutine(MoveCamera(position, rotation, 2));
+    }
+
+    IEnumerator MoveCamera(Vector3 targetPosition, Quaternion targetRotation, float duration)
+    {
+        float time = 0;
+        Vector3 startPosition = mainCamera.transform.position;
+        Quaternion startRotation = mainCamera.transform.rotation;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float t = time / duration;
+
+            mainCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            mainCamera.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
+            yield return null;
+        }
+
+        mainCamera.transform.position = targetPosition;
+        mainCamera.transform.rotation = targetRotation;
+    }
 }
