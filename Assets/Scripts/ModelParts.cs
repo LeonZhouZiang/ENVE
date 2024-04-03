@@ -21,6 +21,10 @@ public class ModelParts : MonoBehaviour
     [Header("Animations")]
     public Animator contactChloroTankWaterAnimation;
 
+    Material outlineMat;
+    public float[] WWTPOutline;
+    public float[] WTPOutline;
+
     public void Start()
     {
         
@@ -30,16 +34,22 @@ public class ModelParts : MonoBehaviour
     {
         if (WWTP)
         {
-            for(int i = 0; i < WWTPModel.Length; i++)
+            outlineMat.SetFloat("Thickness", WWTPOutline[index]);
+            for (int j = 0; j < WWTPModel[index].transform.childCount; j++)
             {
-                WWTPModel[i].layer = LayerMask.NameToLayer("Outline");
+                GameObject child = WWTPModel[index].transform.GetChild(j).gameObject;
+                if (child.layer != LayerMask.NameToLayer("ExcludeOutline"))
+                    child.layer = LayerMask.NameToLayer("Outline");
             }
         }
         else
         {
-            for (int i = 0; i < WTPModel.Length; i++)
+            outlineMat.SetFloat("Thickness", WTPOutline[index]);
+            for (int j = 0; j < WTPModel[index].transform.childCount; j++)
             {
-                WTPModel[i].layer = LayerMask.NameToLayer("Outline");
+                GameObject child = WTPModel[index].transform.GetChild(j).gameObject;
+                if (child.layer != LayerMask.NameToLayer("ExcludeOutline"))
+                    child.layer = LayerMask.NameToLayer("Outline");
             }
         }
 
@@ -51,14 +61,24 @@ public class ModelParts : MonoBehaviour
         {
             for (int i = 0; i < WWTPModel.Length; i++)
             {
-                WWTPModel[i].layer = LayerMask.NameToLayer("Default");
+                for (int j = 0; j < WWTPModel[i].transform.childCount; j++)
+                {
+                    GameObject child = WWTPModel[i].transform.GetChild(j).gameObject;
+                    if (child.layer != LayerMask.NameToLayer("ExcludeOutline"))
+                        child.layer = LayerMask.NameToLayer("Default");
+                }
             }
         }
         else
         {
             for (int i = 0; i < WTPModel.Length; i++)
             {
-                WTPModel[i].layer = LayerMask.NameToLayer("Default");
+                for (int j = 0; j < WTPModel[i].transform.childCount; j++)
+                {
+                    GameObject child = WTPModel[i].transform.GetChild(j).gameObject;
+                    if (child.layer != LayerMask.NameToLayer("ExcludeOutline"))
+                        child.layer = LayerMask.NameToLayer("Default");
+                }
             }
         }
     }

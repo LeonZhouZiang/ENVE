@@ -12,7 +12,7 @@ public class ProgressManager : MonoBehaviour
 
     public Transform[] cameraPositionWWTP;
     public Transform[] cameraPositionWTP;
-
+    
     public TextMeshProUGUI description;
 
     public GameObject WWTPButtons;

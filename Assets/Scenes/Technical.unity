@@ -901,6 +901,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   contactChloroTankWaterAnimation: {fileID: 0}
+  WWTPOutline:
+  - 0.003
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  WTPOutline:
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  - 0.0043
+  - 0.0043
 --- !u!1 &200930779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,6 +5855,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8436351737918303488, guid: 21b021cbecd796b48bf51dce77ab0b9b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436351738154250020, guid: 21b021cbecd796b48bf51dce77ab0b9b,
         type: 3}
       propertyPath: m_Layer
       value: 0
