@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6f3fc168330b2f04eb430a4eea1093a7, type: 2}
+  - {fileID: 2100000, guid: a52566b46e0d422498cd36515f8a1bce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,5 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouyancy: 9
   drag: 0.97
-  waterHeight: 7
+  waterHeight: 24.8
   flowForce: {x: 0, y: 0}
