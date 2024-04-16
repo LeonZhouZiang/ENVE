@@ -21,7 +21,7 @@ public class ModelParts : MonoBehaviour
     [Header("Animations")]
     public Animator contactChloroTankWaterAnimation;
 
-    Material outlineMat;
+    public Material outlineMat;
     public float[] WWTPOutline;
     public float[] WTPOutline;
 

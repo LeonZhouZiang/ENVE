@@ -8,11 +8,14 @@ public class ProgressManager : MonoBehaviour
 {
     public bool WWTP = false;
     public int progress = 0;
-    public Camera mainCamera;
+    public GameObject currentCam;
 
     public Transform[] cameraPositionWWTP;
     public Transform[] cameraPositionWTP;
-    
+
+    public GameObject[] WWTPCameras;
+    public GameObject[] WTPCameras;
+
     public TextMeshProUGUI description;
 
     public GameObject WWTPButtons;
@@ -22,7 +25,7 @@ public class ProgressManager : MonoBehaviour
     public GameObject WTPModel;
     void Start()
     {
-        mainCamera = Camera.main;
+        currentCam = Camera.main.gameObject;
         Starting();
     }
 
@@ -38,7 +41,7 @@ public class ProgressManager : MonoBehaviour
             WTPModel.SetActive(false);
             WTPButtons.SetActive(false);
 
-            mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[0].position, cameraPositionWWTP[0].rotation);
+            //currentCam.transform.SetPositionAndRotation(cameraPositionWWTP[0].position, cameraPositionWWTP[0].rotation);
             Debug.Log(cameraPositionWWTP[0].position);
         }
         else
@@ -50,7 +53,7 @@ public class ProgressManager : MonoBehaviour
             WWTPModel.SetActive(false);
             WWTPButtons.SetActive(false);
 
-            mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[0].position, cameraPositionWTP[0].rotation);
+            //currentCam.transform.SetPositionAndRotation(cameraPositionWTP[0].position, cameraPositionWTP[0].rotation);
         }
     }
     // Update is called once per frame
@@ -75,7 +78,7 @@ public class ProgressManager : MonoBehaviour
             WTPModel.SetActive(true);
             WTPButtons.SetActive(true);
 
-            mainCamera.transform.SetPositionAndRotation(cameraPositionWTP[0].position, cameraPositionWTP[0].rotation);
+            currentCam.transform.SetPositionAndRotation(cameraPositionWTP[0].position, cameraPositionWTP[0].rotation);
         }
         else
         {
@@ -87,7 +90,7 @@ public class ProgressManager : MonoBehaviour
             WWTPModel.SetActive(true);
             WWTPButtons.SetActive(true);
 
-            mainCamera.transform.SetPositionAndRotation(cameraPositionWWTP[0].position, cameraPositionWWTP[0].rotation);
+            currentCam.transform.SetPositionAndRotation(cameraPositionWWTP[0].position, cameraPositionWWTP[0].rotation);
         }
     }
 
@@ -237,20 +240,38 @@ public class ProgressManager : MonoBehaviour
     IEnumerator MoveCamera(Vector3 targetPosition, Quaternion targetRotation, float duration)
     {
         float time = 0;
-        Vector3 startPosition = mainCamera.transform.position;
-        Quaternion startRotation = mainCamera.transform.rotation;
+        Vector3 startPosition = currentCam.transform.position;
+        Quaternion startRotation = currentCam.transform.rotation;
 
         while (time < duration)
         {
             time += Time.deltaTime;
             float t = time / duration;
 
-            mainCamera.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
-            mainCamera.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
+            currentCam.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            currentCam.transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
             yield return null;
         }
 
-        mainCamera.transform.position = targetPosition;
-        mainCamera.transform.rotation = targetRotation;
+        currentCam.transform.position = targetPosition;
+        currentCam.transform.rotation = targetRotation;
+    }
+
+    void SwitchCamera(int index)
+    {
+        if (WWTP && index < WWTPCameras.Length)
+        {
+            currentCam.SetActive(false);
+
+            WWTPCameras[index].SetActive(true);
+            currentCam = WWTPCameras[index];
+        }
+        else if(!WWTP && index < WTPCameras.Length)
+        {
+            currentCam.SetActive(false);
+
+            WTPCameras[index].SetActive(true);
+            currentCam = WTPCameras[index];
+        }
     }
 }
