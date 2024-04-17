@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 
 namespace StarterAssets
@@ -31,3 +32,4 @@ namespace StarterAssets
     }
 
 }
+*/
