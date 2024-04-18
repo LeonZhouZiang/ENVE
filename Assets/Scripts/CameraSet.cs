@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraSet : MonoBehaviour
 {
-    [SerializeField] private GameObject primaryParticles, secondaryParticles;
+    [SerializeField] private GameObject primaryParticles, secondaryParticles, chamber;
+    [SerializeField] private bool isCrossSection;
 
     public GameObject GetPrimaryParticles()
     {
@@ -14,5 +15,15 @@ public class CameraSet : MonoBehaviour
     public GameObject GetSecondaryParticles()
     {
         return secondaryParticles;
+    }
+
+    public GameObject GetChamber()
+    {
+        return chamber;
+    }
+
+    public bool IsCrossSection()
+    {
+        return isCrossSection;
     }
 }

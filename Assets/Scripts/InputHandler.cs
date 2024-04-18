@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject cameraParent;
+    [SerializeField] private GameObject cameraParent, wwtp, terrain;
     [SerializeField] private Image transitionPanel;
     [SerializeField] private Color transitionColor;
     [SerializeField] private float transitionTime;
@@ -78,6 +78,8 @@ public class InputHandler : MonoBehaviour
 
         cams[currentCam].SetActive(false);
 
+        ReactivateAllChambers();
+
         if (direction)
         {
             currentCam++;
@@ -94,6 +96,8 @@ public class InputHandler : MonoBehaviour
                 currentCam = numCams - 1;
             }
         }
+
+        DisableChambers();
 
         cams[currentCam].SetActive(true);
 
@@ -122,6 +126,33 @@ public class InputHandler : MonoBehaviour
         if (p)
         {
             p.GetComponent<ParticleSpawner>().ChangeParticleState();
+        }
+    }
+
+    private void ReactivateAllChambers()
+    {
+        terrain.SetActive(true);
+        for (int i = 0; i < wwtp.transform.childCount; i++)
+        {
+            wwtp.transform.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
+    private void DisableChambers()
+    {
+        if (cams[currentCam].GetComponent<CameraSet>().IsCrossSection())
+        {
+            GameObject g = cams[currentCam].GetComponent<CameraSet>().GetChamber();
+
+            terrain.SetActive(false);
+            for (int i = 0; i < wwtp.transform.childCount; i++)
+            {
+                GameObject temp = wwtp.transform.GetChild(i).gameObject;
+                if (temp != g)
+                {
+                    wwtp.transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
         }
     }
 }
