@@ -1503,7 +1503,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -1889,7 +1889,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -2340,7 +2340,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -3159,6 +3159,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 166320067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &166320069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8518773801504038127, guid: a8fbd13c956ad394cb33e42e343515a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 166320067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169129253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,7 +3254,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -3683,7 +3689,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -3792,7 +3798,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -4198,7 +4204,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -4566,7 +4572,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -5482,7 +5488,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -5992,7 +5998,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.107648
   orthographic: 0
@@ -6321,7 +6327,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -8819,7 +8825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356364643}
   m_LocalRotation: {x: -0, y: 0.47101185, z: -0, w: 0.8821269}
-  m_LocalPosition: {x: 62.499996, y: 5.1000004, z: -39.500027}
+  m_LocalPosition: {x: 62.499996, y: 4, z: -49.83}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8841,7 +8847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryParticles: {fileID: 0}
   secondaryParticles: {fileID: 0}
-  chamber: {fileID: 831968574}
+  chamber: {fileID: 1803880234}
   isCrossSection: 1
 --- !u!1001 &360530195
 PrefabInstance:
@@ -9385,7 +9391,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -9963,7 +9969,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -11040,7 +11046,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.107648
   orthographic: 0
@@ -11258,7 +11264,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -11445,7 +11451,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -13374,7 +13380,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -13641,7 +13647,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -14920,7 +14926,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -16553,7 +16559,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -17156,7 +17162,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -17483,7 +17489,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -17779,7 +17785,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -19338,12 +19344,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &831968574 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 609497359278903503, guid: c7ab23c17791d894bad8370e412588f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1591459172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835293630
 GameObject:
   m_ObjectHideFlags: 0
@@ -20673,7 +20673,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -21767,7 +21767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914846050}
   m_LocalRotation: {x: -0, y: 0.47101185, z: -0, w: 0.8821269}
-  m_LocalPosition: {x: 50.939995, y: 22.2, z: 20.60999}
+  m_LocalPosition: {x: 77.5, y: 23.8, z: 19.5}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21789,7 +21789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryParticles: {fileID: 0}
   secondaryParticles: {fileID: 0}
-  chamber: {fileID: 1878932521}
+  chamber: {fileID: 166320069}
   isCrossSection: 1
 --- !u!1 &920312015
 GameObject:
@@ -21880,7 +21880,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -21989,7 +21989,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -22474,7 +22474,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -24215,7 +24215,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -25827,7 +25827,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -25936,7 +25936,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -27280,7 +27280,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -30381,7 +30381,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -31394,7 +31394,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -32611,7 +32611,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -34788,7 +34788,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -36089,7 +36089,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -37358,7 +37358,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -37545,7 +37545,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -38284,7 +38284,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -38695,7 +38695,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -38804,7 +38804,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -39901,7 +39901,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -40464,7 +40464,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -41385,6 +41385,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1803880232}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1803880234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 609497359278903503, guid: c7ab23c17791d894bad8370e412588f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1803880232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1805032431
 GameObject:
   m_ObjectHideFlags: 0
@@ -41583,7 +41589,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -42406,7 +42412,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 31.85
+  near clip plane: 28.21
   far clip plane: 1000
   field of view: 15.10765
   orthographic: 0
@@ -42713,7 +42719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843694401}
   m_LocalRotation: {x: -0, y: -0.6666539, z: -0, w: 0.74536747}
-  m_LocalPosition: {x: -17.54, y: -1.81, z: -31.88}
+  m_LocalPosition: {x: -19.1, y: -5.31, z: -26.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42833,7 +42839,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 51.8
+  near clip plane: 28.5
   far clip plane: 996.1
   field of view: 15.107648
   orthographic: 0
@@ -43641,12 +43647,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &1878932521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8518773801504038127, guid: a8fbd13c956ad394cb33e42e343515a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2052543941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886309515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6863395426106468714, guid: 973fbd1666b456049bfbd6726b843956,
@@ -43742,7 +43742,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
@@ -46490,7 +46490,7 @@ Camera:
     y: 0
     width: 0.0625
     height: 1
-  near clip plane: 37
+  near clip plane: 26.2
   far clip plane: 996.1
   field of view: 15.10765
   orthographic: 0
