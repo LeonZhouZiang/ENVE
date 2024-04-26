@@ -13,6 +13,7 @@ public class InputHandler : MonoBehaviour
     private int currentCam = 0;
     private GameObject[] cams;
     private bool changingCameras;
+    private bool terrainEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,10 @@ public class InputHandler : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 Time.timeScale = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                ToggleTerrain();
             }
         }
 
@@ -131,7 +136,11 @@ public class InputHandler : MonoBehaviour
 
     private void ReactivateAllChambers()
     {
-        terrain.SetActive(true);
+        if (terrainEnabled)
+        {
+            terrain.SetActive(true);
+        }
+
         for (int i = 0; i < wwtp.transform.childCount; i++)
         {
             wwtp.transform.GetChild(i).gameObject.SetActive(true);
@@ -153,6 +162,19 @@ public class InputHandler : MonoBehaviour
                     wwtp.transform.GetChild(i).gameObject.SetActive(false);
                 }
             }
+        }
+    }
+
+    private void ToggleTerrain()
+    {
+        terrainEnabled = !terrainEnabled;
+        if (terrainEnabled)
+        {
+            terrain.SetActive(true);
+        }
+        else
+        {
+            terrain.SetActive(false);
         }
     }
 }
