@@ -9,6 +9,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private Image transitionPanel;
     [SerializeField] private Color transitionColor;
     [SerializeField] private float transitionTime;
+    [SerializeField] private Material normalSkyBox, blankSkyBox;
     private int numCams;
     private int currentCam = 0;
     private GameObject[] cams;
@@ -136,6 +137,12 @@ public class InputHandler : MonoBehaviour
 
     private void ReactivateAllChambers()
     {
+        if (cams[currentCam].GetComponent<CameraSet>().IsCrossSection())
+        {
+            GameObject g = cams[currentCam].GetComponent<CameraSet>().GetCrossSection();
+            g.SetActive(true);
+        }
+
         if (terrainEnabled)
         {
             terrain.SetActive(true);
@@ -151,30 +158,33 @@ public class InputHandler : MonoBehaviour
     {
         if (cams[currentCam].GetComponent<CameraSet>().IsCrossSection())
         {
-            GameObject g = cams[currentCam].GetComponent<CameraSet>().GetChamber();
+            GameObject g = cams[currentCam].GetComponent<CameraSet>().GetCrossSection();
+            g.SetActive(true);
 
             terrain.SetActive(false);
             for (int i = 0; i < wwtp.transform.childCount; i++)
             {
                 GameObject temp = wwtp.transform.GetChild(i).gameObject;
-                if (temp != g)
-                {
-                    wwtp.transform.GetChild(i).gameObject.SetActive(false);
-                }
+                wwtp.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
     }
 
     private void ToggleTerrain()
     {
-        terrainEnabled = !terrainEnabled;
-        if (terrainEnabled)
+        if (!cams[currentCam].GetComponent<CameraSet>().IsCrossSection())
         {
-            terrain.SetActive(true);
-        }
-        else
-        {
-            terrain.SetActive(false);
+            terrainEnabled = !terrainEnabled;
+            if (terrainEnabled)
+            {
+                terrain.SetActive(true);
+                RenderSettings.skybox = normalSkyBox;
+            }
+            else
+            {
+                terrain.SetActive(false);
+                RenderSettings.skybox = blankSkyBox;
+            }
         }
     }
 }
