@@ -6,9 +6,6 @@ public class DisablePhysicsTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<ParticleMove>())
-        {
-            other.gameObject.GetComponent<ParticleMove>().DisableFloatingPhysics();
-        }
+
     }
 }

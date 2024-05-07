@@ -3685,7 +3685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 1269669631}
+  primaryParticles: {fileID: 1675928441}
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
@@ -4286,55 +4286,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &149148494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 149148496}
-  - component: {fileID: 149148495}
-  m_Layer: 0
-  m_Name: GritParticleSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &149148495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149148494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles:
-  - {fileID: 6552712839021365247, guid: abf0d62ba701b64499a47e7243bb345b, type: 3}
-  spawnpoint: {x: 12, y: 4, z: 62}
-  randomness: 3
-  numberOfParticles: 100
---- !u!4 &149148496
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149148494}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.239117, y: 0.639374, z: 130.14389}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1870263021}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &149782636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5360,55 +5311,6 @@ Transform:
   - {fileID: 337417932}
   m_Father: {fileID: 142235634}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &179553165
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 179553167}
-  - component: {fileID: 179553166}
-  m_Layer: 0
-  m_Name: ScumSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &179553166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179553165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles:
-  - {fileID: 5222522349206874431, guid: bcea700717f25c24d9966442fce11b05, type: 3}
-  spawnpoint: {x: 96, y: 28, z: 91}
-  randomness: 8
-  numberOfParticles: 300
---- !u!4 &179553167
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179553165}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 69.76088, y: 25.899374, z: 159.14389}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1870263021}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185683783
 GameObject:
@@ -7120,8 +7022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 149148494}
-  secondaryParticles: {fileID: 1312684858}
+  primaryParticles: {fileID: 0}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 2089040453}
   isCrossSection: 1
 --- !u!1 &223927403
@@ -7391,8 +7293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 179553165}
-  secondaryParticles: {fileID: 1204517604}
+  primaryParticles: {fileID: 0}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
 --- !u!1 &236288008
@@ -11079,8 +10981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 179553165}
-  secondaryParticles: {fileID: 1204517604}
+  primaryParticles: {fileID: 0}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
 --- !u!1 &353987166
@@ -13014,7 +12916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 1269669631}
+  primaryParticles: {fileID: 1675928441}
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 1421490753}
   isCrossSection: 1
@@ -18026,8 +17928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 149148494}
-  secondaryParticles: {fileID: 1312684858}
+  primaryParticles: {fileID: 0}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
 --- !u!1 &605948328
@@ -34522,55 +34424,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36909e064e2001541a1625f1a11cc6ff, type: 3}
---- !u!1 &1204517604
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1204517606}
-  - component: {fileID: 1204517605}
-  m_Layer: 0
-  m_Name: SludgeSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1204517605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204517604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles:
-  - {fileID: 4577527164786147470, guid: 41e2bbecfd7e17341a9e0024da0308b2, type: 3}
-  spawnpoint: {x: 120, y: 28, z: 124}
-  randomness: 7
-  numberOfParticles: 300
---- !u!4 &1204517606
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204517604}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 93.76088, y: 25.899374, z: 192.14389}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1870263021}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1205351439
 GameObject:
   m_ObjectHideFlags: 0
@@ -34716,8 +34569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 179553165}
-  secondaryParticles: {fileID: 1204517604}
+  primaryParticles: {fileID: 0}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 347048464}
   isCrossSection: 1
 --- !u!1 &1210339963
@@ -36288,7 +36141,7 @@ Transform:
   - {fileID: 946093576}
   - {fileID: 1367606142}
   m_Father: {fileID: 1870263021}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1255124189 stripped
 Transform:
@@ -36642,57 +36495,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d03ab1ab99a67542bba699233b0ef01, type: 3}
---- !u!1 &1269669631
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1269669633}
-  - component: {fileID: 1269669632}
-  m_Layer: 0
-  m_Name: BarParticleSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1269669632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269669631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles:
-  - {fileID: 1420774741952279867, guid: 6d59fd4f5509f7149b2338421e113e0e, type: 3}
-  - {fileID: 5222522349206874431, guid: 15e9fc064f4b2d047a4390841c206cfa, type: 3}
-  - {fileID: 6552712839021365247, guid: 406b31d75f538894b8a1c074b5219c9a, type: 3}
-  spawnpoint: {x: 0, y: 2.5, z: 0}
-  randomness: 1
-  numberOfParticles: 100
---- !u!4 &1269669633
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269669631}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.239117, y: 0.399374, z: 68.1439}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1870263021}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1272122025
 GameObject:
   m_ObjectHideFlags: 0
@@ -38313,55 +38115,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &1312684858
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1312684860}
-  - component: {fileID: 1312684859}
-  m_Layer: 0
-  m_Name: GritWaterParticleSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1312684859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312684858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles:
-  - {fileID: 6552712839021365247, guid: 5a84fea1bb8da5d478c89dc7ef3b7ec0, type: 3}
-  spawnpoint: {x: 30, y: 4, z: 80}
-  randomness: 4
-  numberOfParticles: 50
---- !u!4 &1312684860
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312684858}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7608833, y: 0.639374, z: 148.14389}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1870263021}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1315055703
 GameObject:
   m_ObjectHideFlags: 0
@@ -42485,7 +42238,7 @@ PrefabInstance:
     - target: {fileID: 8676940871973369996, guid: a1f572ae6fef1794da1bfbafd8316f92,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8676940871973369996, guid: a1f572ae6fef1794da1bfbafd8316f92,
         type: 3}
@@ -48618,7 +48371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 1269669631}
+  primaryParticles: {fileID: 1675928441}
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
@@ -49644,6 +49397,93 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1675928441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1675928442}
+  - component: {fileID: 1675928443}
+  - component: {fileID: 1675928444}
+  - component: {fileID: 1675928445}
+  m_Layer: 0
+  m_Name: BarChamberParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1675928442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675928441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.18, y: 0.852, z: 65.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1870263021}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1675928443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675928441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 3101501772249956400, guid: 71d5a419dfc467643b325db8c4d84027, type: 3}
+  - {fileID: 3880402335614611930, guid: 083b2188254f5e6459e9e840bc3b1dd8, type: 3}
+  - {fileID: 3762301508829570105, guid: c496d47022512174e9a7cc1c624a74bc, type: 3}
+  - {fileID: 8227557449657825814, guid: a5f83c3ddb0f4ba42abe1447c437f432, type: 3}
+  - {fileID: 6884947474598090045, guid: dc74e1d61537877479a5578e0afed739, type: 3}
+  - {fileID: 1080638253118092023, guid: 34f09a8a37197954b8ca073c75cf6715, type: 3}
+  - {fileID: 5049406548216278535, guid: c10c98ccb75a22d40a28595f2aa010fb, type: 3}
+  - {fileID: 3611098199233100111, guid: 018008cb4dd8b2c4090932eb77995c8d, type: 3}
+  spawnpoint: {x: 0, y: 0, z: 0}
+  randomness: 1
+  numberOfParticles: 300
+--- !u!65 &1675928444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675928441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.712265, y: 11.334271, z: 51.60905}
+  m_Center: {x: -0.23103714, y: -2.477407, z: 20.329218}
+--- !u!114 &1675928445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675928441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a55d3b2d2416a4588ae19783b28d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bouyancy: 12
+  drag: 0.95
+  waterHeight: 2.158444
+  flowForce: {x: 0.01, y: 1}
 --- !u!1001 &1677590720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55879,12 +55719,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1269669633}
-  - {fileID: 149148496}
-  - {fileID: 1312684860}
-  - {fileID: 179553167}
-  - {fileID: 1204517606}
   - {fileID: 1254812907}
+  - {fileID: 1675928442}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61584,8 +61420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 149148494}
-  secondaryParticles: {fileID: 1312684858}
+  primaryParticles: {fileID: 0}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
 --- !u!1 &2075323514
