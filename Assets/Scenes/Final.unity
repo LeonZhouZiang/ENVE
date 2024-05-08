@@ -21438,7 +21438,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2089040452}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &722331027
 Animator:
@@ -21450,7 +21450,7 @@ Animator:
   m_GameObject: {fileID: 722331025}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95081ecefe675f24595c6693fee27113, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3c247116bf315240b9e6386f892fc9a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -34796,7 +34796,7 @@ Animator:
   m_GameObject: {fileID: 1215699255}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95081ecefe675f24595c6693fee27113, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3c247116bf315240b9e6386f892fc9a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -41999,7 +41999,7 @@ Animator:
   m_GameObject: {fileID: 1419758487}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95081ecefe675f24595c6693fee27113, type: 2}
+  m_Controller: {fileID: 9100000, guid: b3c247116bf315240b9e6386f892fc9a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -45562,7 +45562,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2089040452}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1529138741
 MeshCollider:
