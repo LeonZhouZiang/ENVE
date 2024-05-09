@@ -140,7 +140,7 @@ public class InputHandler : MonoBehaviour
         if (cams[currentCam].GetComponent<CameraSet>().IsCrossSection())
         {
             GameObject g = cams[currentCam].GetComponent<CameraSet>().GetCrossSection();
-            g.SetActive(true);
+            g.SetActive(false);
         }
 
         if (terrainEnabled)
