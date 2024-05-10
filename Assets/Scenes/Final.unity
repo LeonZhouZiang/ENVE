@@ -7022,7 +7022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 0}
+  primaryParticles: {fileID: 299128858}
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 2089040453}
   isCrossSection: 1
@@ -8933,6 +8933,91 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1524924882}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &299128858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299128859}
+  - component: {fileID: 299128862}
+  - component: {fileID: 299128861}
+  - component: {fileID: 299128860}
+  m_Layer: 0
+  m_Name: GritChamberParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &299128859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299128858}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -17.6, y: 4.86, z: 126.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1870263021}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &299128860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299128858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a55d3b2d2416a4588ae19783b28d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bouyancy: 9.5
+  drag: 0.95
+  waterHeight: 2.482382
+  flowForce: {x: 0.5, y: 0.5}
+--- !u!65 &299128861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299128858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25.648495, y: 20.400654, z: 51.609055}
+  m_Center: {x: -0.3927644, y: -7.010597, z: 20.329216}
+--- !u!114 &299128862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299128858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3481eef5cc556ab468335e912852365c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 6274724599304922857, guid: 9ee8be3e2e81360458bfa79f522fd1b7, type: 3}
+  - {fileID: 982772754980156848, guid: c76a6ec6d681a4f42b151e7027a5403c, type: 3}
+  - {fileID: 8787006302526934581, guid: d5f40c1131e65744bad4c7299b2738e1, type: 3}
+  - {fileID: 1109167468017395802, guid: 75058c0299a04ac4a8b048efff34956b, type: 3}
+  - {fileID: 7315688206160632292, guid: 36c382c5ca6432d4d82bc97c7160cdc8, type: 3}
+  - {fileID: 7973451485853293123, guid: ceeb6acac1375e1468ebb959c63b7ef6, type: 3}
+  spawnpoint: {x: 12, y: 3.5, z: 62}
+  randomness: 1.6
+  numberOfParticles: 1000
 --- !u!1001 &302535044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17928,7 +18013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 0}
+  primaryParticles: {fileID: 299128858}
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
@@ -55721,6 +55806,7 @@ Transform:
   m_Children:
   - {fileID: 1254812907}
   - {fileID: 1675928442}
+  - {fileID: 299128859}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61420,7 +61506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deaff99c5348f40bb3f842edc6241b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryParticles: {fileID: 0}
+  primaryParticles: {fileID: 299128858}
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
