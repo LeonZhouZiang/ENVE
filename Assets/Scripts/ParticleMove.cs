@@ -10,7 +10,8 @@ public class ParticleMove : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb)
+        Particle p = other.gameObject.GetComponent<Particle>();
+        if (rb && p && p.PhysicsAreEnabled())
         {
             rb.velocity *= drag;
             if (other.transform.position.y < waterHeight)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6552712839021365245}
   - component: {fileID: 6552712839021365244}
   - component: {fileID: 6552712839021365232}
-  - component: {fileID: 6552712839021365233}
+  - component: {fileID: 3418520836543994175}
   m_Layer: 0
   m_Name: ParticleWater
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6552712839021365233
+--- !u!114 &3418520836543994175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,10 +124,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6552712839021365247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a55d3b2d2416a4588ae19783b28d78, type: 3}
+  m_Script: {fileID: 11500000, guid: ed49781c91989914b85e1fffa8f74d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouyancy: 15
-  drag: 0.99
-  waterHeight: 2.482382
-  flowForce: {x: 0.25, y: 0.25}
