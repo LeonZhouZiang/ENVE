@@ -3774,6 +3774,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 1
 --- !u!4 &116693118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 228864083906307571, guid: 36909e064e2001541a1625f1a11cc6ff,
@@ -7111,6 +7112,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 1193925670}
   crossSection: {fileID: 2089040453}
   isCrossSection: 1
+  particleSystemID: 2
 --- !u!1 &223927403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7382,6 +7384,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 807609023}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 3
 --- !u!1 &236288008
 GameObject:
   m_ObjectHideFlags: 0
@@ -11155,6 +11158,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 807609023}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 3
 --- !u!1 &353987166
 GameObject:
   m_ObjectHideFlags: 0
@@ -13090,6 +13094,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 1421490753}
   isCrossSection: 1
+  particleSystemID: 1
 --- !u!4 &437580848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a7a438ffabf49f419d5679479fef0dc,
@@ -14714,6 +14719,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1 &490714661
 GameObject:
   m_ObjectHideFlags: 0
@@ -18102,6 +18108,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 1193925670}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 2
 --- !u!1 &605948328
 GameObject:
   m_ObjectHideFlags: 0
@@ -28731,6 +28738,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!4 &941194871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 228864083906307571, guid: 36909e064e2001541a1625f1a11cc6ff,
@@ -29793,6 +29801,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 283021497}
   isCrossSection: 1
+  particleSystemID: 0
 --- !u!1001 &977460155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34922,6 +34931,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 807609023}
   crossSection: {fileID: 347048464}
   isCrossSection: 1
+  particleSystemID: 3
 --- !u!1 &1210339963
 GameObject:
   m_ObjectHideFlags: 0
@@ -35343,6 +35353,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 1363128958}
   isCrossSection: 1
+  particleSystemID: 0
 --- !u!1 &1223939695
 GameObject:
   m_ObjectHideFlags: 0
@@ -43253,6 +43264,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1 &1455680866
 GameObject:
   m_ObjectHideFlags: 0
@@ -48202,6 +48214,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 656523589}
   isCrossSection: 1
+  particleSystemID: 0
 --- !u!114 &1622761755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48724,6 +48737,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 1
 --- !u!4 &1633916047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 228864083906307571, guid: 36909e064e2001541a1625f1a11cc6ff,
@@ -51580,6 +51594,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1001 &1731175572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51954,6 +51969,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1001 &1741923654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52191,6 +52207,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1 &1753082458
 GameObject:
   m_ObjectHideFlags: 0
@@ -53956,6 +53973,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1001 &1794648485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61876,6 +61894,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 1193925670}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 2
 --- !u!1 &2075323514
 GameObject:
   m_ObjectHideFlags: 0
@@ -64057,6 +64076,7 @@ MonoBehaviour:
   secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
+  particleSystemID: 0
 --- !u!1 &8572088313657200305
 GameObject:
   m_ObjectHideFlags: 0

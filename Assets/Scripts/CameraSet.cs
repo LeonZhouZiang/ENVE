@@ -6,6 +6,12 @@ public class CameraSet : MonoBehaviour
 {
     [SerializeField] private GameObject primaryParticles, secondaryParticles, crossSection;
     [SerializeField] private bool isCrossSection;
+    [SerializeField] private int particleSystemID;
+
+    public int GetParticleSystemID()
+    {
+        return particleSystemID;
+    }
 
     public GameObject GetPrimaryParticles()
     {

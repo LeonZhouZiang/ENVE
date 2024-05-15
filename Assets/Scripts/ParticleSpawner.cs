@@ -44,4 +44,12 @@ public class ParticleSpawner : MonoBehaviour
             }
         }
     }
+
+    public void DisableParticles()
+    {
+        if (spawned && p.activeSelf)
+        {
+            p.SetActive(false);
+        }
+    }
 }

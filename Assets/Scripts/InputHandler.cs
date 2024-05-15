@@ -86,22 +86,40 @@ public class InputHandler : MonoBehaviour
 
         ReactivateAllChambers();
 
+        int nextCam = 0;
+
         if (direction)
         {
-            currentCam++;
-            if (currentCam >= numCams)
+            nextCam = currentCam + 1;
+            if (nextCam >= numCams)
             {
-                currentCam = 0;
+                nextCam = 0;
             }
         }
         else
         {
-            currentCam--;
-            if (currentCam < 0)
+            nextCam = currentCam - 1;
+            if (nextCam < 0)
             {
-                currentCam = numCams - 1;
+                nextCam = numCams - 1;
             }
         }
+
+        if (cams[currentCam].GetComponent<CameraSet>().GetParticleSystemID() != cams[nextCam].GetComponent<CameraSet>().GetParticleSystemID())
+        {
+            GameObject p = cams[currentCam].GetComponent<CameraSet>().GetPrimaryParticles();
+            if (p)
+            {
+                p.GetComponent<ParticleSpawner>().DisableParticles();
+            }
+            GameObject s = cams[currentCam].GetComponent<CameraSet>().GetSecondaryParticles();
+            if (s)
+            {
+                s.GetComponent<ParticleSpawner>().DisableParticles();
+            }
+        }
+
+        currentCam = nextCam;
 
         DisableChambers();
 
