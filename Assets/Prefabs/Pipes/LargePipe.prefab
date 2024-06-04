@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4119966073618258402}
   - component: {fileID: 4628337649703845998}
   - component: {fileID: 2037262699}
+  - component: {fileID: -5015983382079927888}
   m_Layer: 0
   m_Name: LargePipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,3 +184,17 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &-5015983382079927888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7380295034910720461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cd4216409c7d64bb8edf3fbabe8336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
+    type: 3}

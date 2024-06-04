@@ -56,15 +56,28 @@ public class InputHandler : MonoBehaviour
             {
                 Time.timeScale = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.T))
             {
                 ToggleTerrain();
+            }
+            else if (Input.GetKeyDown(KeyCode.P))
+            {
+                TogglePipelines();
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+    }
+
+    private void TogglePipelines()
+    {
+        GameObject[] pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        foreach (GameObject p in pipes)
+        {
+            p.GetComponent<LineRenderer>().enabled = !p.GetComponent<LineRenderer>().enabled;
         }
     }
 

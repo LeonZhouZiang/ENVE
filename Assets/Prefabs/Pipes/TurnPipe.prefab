@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1474866212507498259}
   - component: {fileID: 6697584253249082515}
   - component: {fileID: 1451604280}
+  - component: {fileID: -8448423707362564728}
   m_Layer: 0
   m_Name: TurnPipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +127,9 @@ LineRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Positions:
-  - {x: -0.007, y: 0.02, z: 0}
+  - {x: -0.008, y: 0.02, z: 0}
   - {x: 0.02, y: 0.02, z: 0}
-  - {x: 0.02, y: -0.007, z: 0}
+  - {x: 0.02, y: -0.008, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -184,3 +185,17 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &-8448423707362564728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863729850301668613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cd4216409c7d64bb8edf3fbabe8336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
+    type: 3}
