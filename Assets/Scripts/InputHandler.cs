@@ -64,6 +64,10 @@ public class InputHandler : MonoBehaviour
             {
                 TogglePipelines();
             }
+            else if (Input.GetKeyDown(KeyCode.B))
+            {
+                ToggleFlowVisuals();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -78,6 +82,22 @@ public class InputHandler : MonoBehaviour
         foreach (GameObject p in pipes)
         {
             p.GetComponent<LineRenderer>().enabled = !p.GetComponent<LineRenderer>().enabled;
+        }
+    }
+
+    private void ToggleFlowVisuals()
+    {
+        GameObject[] pipes = GameObject.FindGameObjectsWithTag("Pipe");
+        foreach (GameObject p in pipes)
+        {
+            if (p.name.Contains("TPipe"))
+            {
+                p.GetComponent<TPipeVisualization>().ToggleVisuals();
+            }
+            else
+            {
+                p.GetComponent<PipeVisualization>().ToggleVisuals();
+            }
         }
     }
 
