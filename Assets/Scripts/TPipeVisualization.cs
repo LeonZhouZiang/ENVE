@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class TPipeVisualization : MonoBehaviour
 {
-    [SerializeField] private GameObject nextPipe, secondNextPipe;
     [SerializeField] private GameObject flowSphere;
+    // A normal tpipe combines two pipes into one
+    // A reverse tpipe splits one pipe into two
     [SerializeField] private bool reverse;
-    private GameObject fSphere1, fSphere2;
+    private GameObject fSphere1, fSphere2, nextPipe, secondNextPipe;
     private LineRenderer l;
     private float moveSpeed = 10;
+    private int group, section, pipeNumber;
 
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();
+
         l = GetComponent<LineRenderer>();
         fSphere1 = Instantiate(flowSphere);
         fSphere1.SetActive(false);
@@ -28,6 +32,129 @@ public class TPipeVisualization : MonoBehaviour
         {
             StartCoroutine(MoveFlowSphere1Reverse());
             StartCoroutine(MoveFlowSphere2Reverse());
+        }
+    }
+
+    private void Initialize()
+    {
+        int idNumber = int.Parse(gameObject.name);
+        pipeNumber = idNumber % 100;
+        section = (idNumber / 100) % 100;
+        group = idNumber / 10000;
+
+        if (!reverse)
+        {
+            // Find next pipe
+            string potentialNextPipe = "";
+            if (group < 10)
+            {
+                potentialNextPipe += 0;
+            }
+            potentialNextPipe += group;
+            if (section + 1 < 10)
+            {
+                potentialNextPipe += 0;
+            }
+            potentialNextPipe += (section + 1);
+            potentialNextPipe += 0;
+            potentialNextPipe += 1;
+            nextPipe = GameObject.Find(potentialNextPipe);
+
+            // Find first previous pipe
+            string potentialPreviousPipe = "";
+            if (group < 10)
+            {
+                potentialPreviousPipe += 0;
+            }
+            potentialPreviousPipe += group;
+            if (section - 1 < 10)
+            {
+                potentialPreviousPipe += 0;
+            }
+            potentialPreviousPipe += (section - 1);
+            potentialPreviousPipe += 0;
+            potentialPreviousPipe += 1;
+
+            GameObject startingPipeOfPreviousSection = GameObject.Find(potentialPreviousPipe);
+            GameObject previousPipe;
+
+            while (true)
+            {
+                previousPipe = startingPipeOfPreviousSection;
+                startingPipeOfPreviousSection = startingPipeOfPreviousSection.GetComponent<PipeVisualization>().GetNextPipe();
+                if (!startingPipeOfPreviousSection)
+                {
+                    break;
+                }
+            }
+
+            previousPipe.GetComponent<PipeVisualization>().SetNextPipe(gameObject);
+
+            // Find second previous pipe
+        }
+        else
+        {
+            // Find first next pipe
+            string potentialNextPipe = "";
+            if (group < 10)
+            {
+                potentialNextPipe += 0;
+            }
+            potentialNextPipe += group;
+            if (section + 1 < 10)
+            {
+                potentialNextPipe += 0;
+            }
+            potentialNextPipe += (section + 1);
+            potentialNextPipe += 0;
+            potentialNextPipe += 1;
+            nextPipe = GameObject.Find(potentialNextPipe);
+
+            // Find second next pipe
+            potentialNextPipe = "";
+            if (group < 10)
+            {
+                potentialNextPipe += 0;
+            }
+            potentialNextPipe += group;
+            if (section + 2 < 10)
+            {
+                potentialNextPipe += 0;
+            }
+            potentialNextPipe += (section + 2);
+            potentialNextPipe += 0;
+            potentialNextPipe += 1;
+            secondNextPipe = GameObject.Find(potentialNextPipe);
+
+            // Find previous pipe
+            string potentialPreviousPipe = "";
+            if (group < 10)
+            {
+                potentialPreviousPipe += 0;
+            }
+            potentialPreviousPipe += group;
+            if (section - 1 < 10)
+            {
+                potentialPreviousPipe += 0;
+            }
+            potentialPreviousPipe += (section - 1);
+            potentialPreviousPipe += 0;
+            potentialPreviousPipe += 1;
+
+            GameObject startingPipeOfPreviousSection = GameObject.Find(potentialPreviousPipe);
+            GameObject previousPipe;
+
+            while (true)
+            {
+                previousPipe = startingPipeOfPreviousSection;
+                startingPipeOfPreviousSection = startingPipeOfPreviousSection.GetComponent<PipeVisualization>().GetNextPipe();
+                if (!startingPipeOfPreviousSection)
+                {
+                    break;
+                }
+            }
+
+            previousPipe.GetComponent<PipeVisualization>().SetNextPipe(gameObject);
         }
     }
 

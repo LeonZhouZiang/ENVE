@@ -90,13 +90,17 @@ public class InputHandler : MonoBehaviour
         GameObject[] pipes = GameObject.FindGameObjectsWithTag("Pipe");
         foreach (GameObject p in pipes)
         {
-            if (p.name.Contains("TPipe"))
+            TPipeVisualization t;
+            PipeVisualization v;
+            p.TryGetComponent<TPipeVisualization>(out t);
+            p.TryGetComponent<PipeVisualization>(out v);
+            if (t)
             {
-                p.GetComponent<TPipeVisualization>().ToggleVisuals();
+                t.ToggleVisuals();
             }
-            else
+            else if (p)
             {
-                p.GetComponent<PipeVisualization>().ToggleVisuals();
+                v.ToggleVisuals();
             }
         }
     }

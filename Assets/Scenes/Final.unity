@@ -3922,10 +3922,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cd4216409c7d64bb8edf3fbabe8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
-  startPipe: 0
 --- !u!1 &96948665
 GameObject:
   m_ObjectHideFlags: 0
@@ -23602,10 +23600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cd4216409c7d64bb8edf3fbabe8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
-  startPipe: 0
 --- !u!1001 &634069914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32560,8 +32556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 0
@@ -33408,8 +33402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 1
@@ -37106,8 +37098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 0
@@ -49034,10 +49024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cd4216409c7d64bb8edf3fbabe8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
-  startPipe: 0
 --- !u!4 &1343857359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 228864083906307571, guid: 36909e064e2001541a1625f1a11cc6ff,
@@ -55981,8 +55969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 1
@@ -67858,8 +67844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 1
@@ -68461,10 +68445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cd4216409c7d64bb8edf3fbabe8336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
-  startPipe: 0
 --- !u!1 &1848222416
 GameObject:
   m_ObjectHideFlags: 0
@@ -68791,8 +68773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 1
@@ -69040,8 +69020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 0
@@ -70355,8 +70333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 1
@@ -73400,8 +73376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 0
@@ -78226,8 +78200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d89623cd98414197b62506bbbbe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPipe: {fileID: 0}
-  secondNextPipe: {fileID: 0}
   flowSphere: {fileID: 5425804558844675835, guid: c84c4b409108f9247bff2745b24a3bc7,
     type: 3}
   reverse: 0

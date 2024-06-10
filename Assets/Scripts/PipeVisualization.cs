@@ -11,11 +11,14 @@ public class PipeVisualization : MonoBehaviour
     private float moveSpeed = 10;
     private int group, section, pipeNumber;
 
+    private void Awake()
+    {
+        nextPipe = Initialize();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        nextPipe = Initialize();
-
         l = GetComponent<LineRenderer>();
         fSphere = Instantiate(flowSphere);
         fSphere.SetActive(false);
@@ -29,16 +32,29 @@ public class PipeVisualization : MonoBehaviour
         section = (idNumber / 100) % 100;
         group = idNumber / 10000;
 
-        string potentialNextPipe;
-        potentialNextPipe = ((("" + group) + section) + (pipeNumber + 1));
-        if (GameObject.Find(potentialNextPipe))
+        if (pipeNumber == 1)
         {
-            return GameObject.Find(potentialNextPipe);
+            startingPipe = true;
         }
 
+        string potentialNextPipe = "";
+        if (group < 10)
+        {
+            potentialNextPipe += 0;
+        }
+        potentialNextPipe += group;
+        if (section < 10)
+        {
+            potentialNextPipe += 0;
+        }
+        potentialNextPipe += section;
+        if (pipeNumber + 1 < 10)
+        {
+            potentialNextPipe += 0;
+        }
+        potentialNextPipe += (pipeNumber + 1);
 
-
-        return null;
+        return GameObject.Find(potentialNextPipe);
     }
 
     private IEnumerator MoveFlowSphere()
@@ -65,5 +81,15 @@ public class PipeVisualization : MonoBehaviour
     public void ToggleVisuals()
     {
         fSphere.SetActive(!fSphere.activeSelf);
+    }
+
+    public GameObject GetNextPipe()
+    {
+        return nextPipe;
+    }
+
+    public void SetNextPipe(GameObject p)
+    {
+        nextPipe = p;
     }
 }
