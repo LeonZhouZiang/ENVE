@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NoneTransparent
   - Pipe
+  - VisualizationBall
   layers:
   - Default
   - TransparentFX

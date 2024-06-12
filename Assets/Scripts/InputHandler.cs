@@ -10,6 +10,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private Color transitionColor;
     [SerializeField] private float transitionTime;
     [SerializeField] private Material normalSkyBox, blankSkyBox;
+    [SerializeField] private FlowController flowController;
     private int numCams;
     private int currentCam = 0;
     private GameObject[] cams;
@@ -87,22 +88,12 @@ public class InputHandler : MonoBehaviour
 
     private void ToggleFlowVisuals()
     {
-        GameObject[] pipes = GameObject.FindGameObjectsWithTag("Pipe");
-        foreach (GameObject p in pipes)
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("VisualizationBall");
+        foreach (GameObject b in balls)
         {
-            TPipeVisualization t;
-            PipeVisualization v;
-            p.TryGetComponent<TPipeVisualization>(out t);
-            p.TryGetComponent<PipeVisualization>(out v);
-            if (t)
-            {
-                //t.ToggleVisuals();
-            }
-            else if (p)
-            {
-                //v.ToggleVisuals();
-            }
+            b.GetComponent<VisualizationBall>().ToggleVisibility();
         }
+        flowController.ToggleVisibility();
     }
 
     // True goes to next camera, False goes to previous camera

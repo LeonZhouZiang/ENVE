@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class TPipeVisualization : MonoBehaviour
 {
-    [SerializeField] private GameObject flowSphere;
     // A normal tpipe combines two pipes into one
     // A reverse tpipe splits one pipe into two
     [SerializeField] private bool reverse;
-    private GameObject fSphere1, fSphere2, nextPipe, secondNextPipe;
+    private GameObject nextPipe, secondNextPipe;
     private LineRenderer l;
-    private float moveSpeed = 10;
     private int group, section, pipeNumber;
     private ArrayList path;
 
@@ -19,18 +17,10 @@ public class TPipeVisualization : MonoBehaviour
     {
         l = GetComponent<LineRenderer>();
         Initialize();
-        if (secondNextPipe)
-        {
-            Debug.Log(gameObject.name + " " + nextPipe.name + " " + secondNextPipe.name);
-        }
-        else
-        {
-            Debug.Log(gameObject.name + " " + nextPipe.name);
-        }
 
         if (reverse)
         {
-            //Invoke("CollectPath", 0.1f);
+            Invoke("CollectPath", 0.05f);
         }
 
         /*
@@ -305,124 +295,8 @@ public class TPipeVisualization : MonoBehaviour
             previousPipeSection = (int.Parse(currentPipe.gameObject.name) / 100) % 100;
         }
     }
-
-    /*
-    private IEnumerator MoveFlowSphere1()
+    public ArrayList GetPath()
     {
-        while (true)
-        {
-            float leftover = 0;
-            Vector3 pos1 = transform.TransformDirection(l.GetPosition(0) * transform.localScale.y) + transform.position;
-            Vector3 pos2 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            float distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            float distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere1.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled/distanceBetweenPositions);
-                yield return null;
-            }
-            leftover = distanceTraveled - distanceBetweenPositions;
-
-            pos1 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            pos2 = transform.TransformDirection(l.GetPosition(3) * transform.localScale.y) + transform.position;
-            distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere1.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-        }
+        return path;
     }
-
-    private IEnumerator MoveFlowSphere2()
-    {
-        while (true)
-        {
-            float leftover = 0;
-            Vector3 pos1 = transform.TransformDirection(l.GetPosition(1) * transform.localScale.y) + transform.position;
-            Vector3 pos2 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            float distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            float distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere2.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-            leftover = distanceTraveled - distanceBetweenPositions;
-
-            pos1 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            pos2 = transform.TransformDirection(l.GetPosition(3) * transform.localScale.y) + transform.position;
-            distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere2.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-        }
-    }
-
-    private IEnumerator MoveFlowSphere1Reverse()
-    {
-        while (true)
-        {
-            float leftover = 0;
-            Vector3 pos1 = transform.TransformDirection(l.GetPosition(3) * transform.localScale.y) + transform.position;
-            Vector3 pos2 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            float distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            float distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere1.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-            leftover = distanceTraveled - distanceBetweenPositions;
-
-            pos1 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            pos2 = transform.TransformDirection(l.GetPosition(0) * transform.localScale.y) + transform.position;
-            distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere1.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-        }
-    }
-
-    private IEnumerator MoveFlowSphere2Reverse()
-    {
-        while (true)
-        {
-            float leftover = 0;
-            Vector3 pos1 = transform.TransformDirection(l.GetPosition(3) * transform.localScale.y) + transform.position;
-            Vector3 pos2 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            float distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            float distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere2.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-            leftover = distanceTraveled - distanceBetweenPositions;
-
-            pos1 = transform.TransformDirection(l.GetPosition(2) * transform.localScale.y) + transform.position;
-            pos2 = transform.TransformDirection(l.GetPosition(1) * transform.localScale.y) + transform.position;
-            distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-            distanceTraveled = leftover;
-            for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-            {
-                fSphere2.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled / distanceBetweenPositions);
-                yield return null;
-            }
-        }
-    }
-
-    public void ToggleVisuals()
-    {
-        fSphere1.SetActive(!fSphere1.activeSelf);
-        fSphere2.SetActive(!fSphere2.activeSelf);
-    }
-    */
 }

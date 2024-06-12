@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PipeVisualization : MonoBehaviour
 {
-    [SerializeField] private GameObject flowSphere;
-    private GameObject fSphere, nextPipe = null;
+    private GameObject nextPipe = null;
     private bool startingPipe;
     private LineRenderer l;
-    private float moveSpeed = 10;
     private int group, section, pipeNumber;
     private ArrayList path;
-    [SerializeField] private bool visualize = false, displayNextPipe = false;
 
     private void Awake()
     {
@@ -22,7 +19,7 @@ public class PipeVisualization : MonoBehaviour
     void Start()
     {
         l = GetComponent<LineRenderer>();
-        Invoke("CollectPath", 0.5f);
+        Invoke("CollectPath", 0.1f);
         /*
         fSphere = Instantiate(flowSphere);
         fSphere.SetActive(false);
@@ -30,22 +27,9 @@ public class PipeVisualization : MonoBehaviour
         */
     }
 
-    private void Update()
+    public bool IsStartingPipe()
     {
-        if (visualize && startingPipe)
-        {
-            visualize = false;
-            for (int i = 0; i < path.Count; i++)
-            {
-                Instantiate(flowSphere, (Vector3)path[i], Quaternion.identity);
-            }
-        }
-
-        if (displayNextPipe)
-        {
-            displayNextPipe = false;
-            Debug.Log(nextPipe.name);
-        }
+        return startingPipe;
     }
 
     public void TurnOffStartingPipe()
@@ -162,31 +146,8 @@ public class PipeVisualization : MonoBehaviour
         nextPipe = p;
     }
 
-    /*
-    private IEnumerator MoveFlowSphere()
+    public ArrayList GetPath()
     {
-        while (true)
-        {
-            float leftover = 0;
-            for (int i = 0; i < l.positionCount - 1; i++)
-            {
-                Vector3 pos1 = transform.TransformDirection(l.GetPosition(i) * transform.localScale.y) + transform.position;
-                Vector3 pos2 = transform.TransformDirection(l.GetPosition(i + 1) * transform.localScale.y) + transform.position;
-                float distanceBetweenPositions = Mathf.Abs(Vector3.Distance(pos1, pos2));
-                float distanceTraveled = leftover;
-                for (; distanceTraveled < distanceBetweenPositions; distanceTraveled += Time.deltaTime * moveSpeed)
-                {
-                    fSphere.transform.position = Vector3.Lerp(pos1, pos2, distanceTraveled/distanceBetweenPositions);
-                    yield return null;
-                }
-                leftover = distanceTraveled - distanceBetweenPositions;
-            }
-        }
+        return path;
     }
-
-    public void ToggleVisuals()
-    {
-        fSphere.SetActive(!fSphere.activeSelf);
-    }
-    */
 }
