@@ -44,11 +44,13 @@ public class PipeVisualization : MonoBehaviour
         section = (idNumber / 100) % 100;
         group = idNumber / 10000;
 
+        // If first pipe in section, the pipe is a starting pipe
         if (pipeNumber == 1)
         {
             startingPipe = true;
         }
 
+        // Searches for what the next pipe should be. Returns that pipe if it exists, null if it doesn't
         string potentialNextPipe = "";
         if (group < 10)
         {
@@ -69,6 +71,7 @@ public class PipeVisualization : MonoBehaviour
         return GameObject.Find(potentialNextPipe);
     }
 
+    // If pipe is a starting pipe, this determines the path from the starting pipe to the last pipe it should reach
     private void CollectPath()
     {
         if (!startingPipe)
@@ -76,11 +79,15 @@ public class PipeVisualization : MonoBehaviour
             return;
         }
         path = new ArrayList();
+        // Adds the starting point to the list
+        // The point is converted from local transform to global point
         path.Add(transform.TransformDirection(l.GetPosition(0) * transform.localScale.y) + transform.position);
         LineRenderer currentPipe = l;
         int previousPipeSection = section;
+        // Runs until a pipe is found that has no next pipe
         while (true)
         {
+            // Adds every position of the current pipe except for the first one, which is already accounted for
             for (int i = 1; i < currentPipe.positionCount; i++)
             {
                 path.Add(currentPipe.transform.TransformDirection(currentPipe.GetPosition(i) * currentPipe.transform.localScale.y) + currentPipe.transform.position);
@@ -107,6 +114,7 @@ public class PipeVisualization : MonoBehaviour
                 // Is a t-pipe
                 else
                 {
+                    // Continues out one end of the t-pipe
                     if (t.IsReversed())
                     {
                         path.Add(currentPipe.transform.TransformDirection(currentPipe.GetPosition(2) * currentPipe.transform.localScale.y) + currentPipe.transform.position);
@@ -114,13 +122,13 @@ public class PipeVisualization : MonoBehaviour
                     }
                     else
                     {
-                        // Continue path
+                        // Continues out the single path
                         if (((int.Parse(currentPipe.gameObject.name) / 100) % 100) - 1 == previousPipeSection)
                         {
                             path.Add(currentPipe.transform.TransformDirection(currentPipe.GetPosition(2) * currentPipe.transform.localScale.y) + currentPipe.transform.position);
                             path.Add(currentPipe.transform.TransformDirection(currentPipe.GetPosition(3) * currentPipe.transform.localScale.y) + currentPipe.transform.position);
                         }
-                        // End path
+                        // Ends path
                         else
                         {
                             path.Add(currentPipe.transform.TransformDirection(currentPipe.GetPosition(2) * currentPipe.transform.localScale.y) + currentPipe.transform.position);

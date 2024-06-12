@@ -16,14 +16,18 @@ public class FlowController : MonoBehaviour
     void Start()
     {
         previousSpeed = speed;
+
+        // Organizational parent object
         ballParent = new GameObject();
         ballParent.name = "VisualizationBallParent";
+
         Invoke("CollectStartingPipes", 0.2f);
         Invoke("InitializeSpeed", 2.5f);
     }
 
     private void Update()
     {
+        // Detects a speed change and updates the speed for all existing balls
         if (previousSpeed != speed)
         {
             previousSpeed = speed;
@@ -35,11 +39,14 @@ public class FlowController : MonoBehaviour
         }
     }
 
+    // Balls move at super speed at the beginning to propogate the pipes
+    // This method turns off super-speed
     private void InitializeSpeed()
     {
         speed = startingSpeed;
     }
 
+    // Looks at all the pipes in the scene and creates an array list of only the starting pipes in a section
     private void CollectStartingPipes()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -76,6 +83,7 @@ public class FlowController : MonoBehaviour
         StartCoroutine(SpawnTimer());
     }
 
+    // Spawns balls at a rate proportional to the ball speed to maintain equal spacing between balls
     private IEnumerator SpawnTimer()
     {
         while (true)
@@ -88,6 +96,7 @@ public class FlowController : MonoBehaviour
         }
     }
 
+    // Spawns one ball for every starting pipe
     private void SpawnVisualizationBalls()
     {
         foreach (Object pipeObject in pipes)
@@ -120,6 +129,7 @@ public class FlowController : MonoBehaviour
         }
     }
 
+    // Determines the initial visibility state for newly spawned balls
     public void ToggleVisibility()
     {
         visible = !visible;

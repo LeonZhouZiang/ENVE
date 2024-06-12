@@ -233,6 +233,7 @@ public class TPipeVisualization : MonoBehaviour
         }
     }
 
+    // Slightly modified from PipeVisualization
     private void CollectPath()
     {
         path = new ArrayList();
