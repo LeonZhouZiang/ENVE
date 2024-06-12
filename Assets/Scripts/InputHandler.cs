@@ -96,11 +96,11 @@ public class InputHandler : MonoBehaviour
             p.TryGetComponent<PipeVisualization>(out v);
             if (t)
             {
-                t.ToggleVisuals();
+                //t.ToggleVisuals();
             }
             else if (p)
             {
-                v.ToggleVisuals();
+                //v.ToggleVisuals();
             }
         }
     }
