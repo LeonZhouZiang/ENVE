@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PrimaryClarifierWater
-  m_Shader: {fileID: -6465566751694194690, guid: 8b882f59d7eaca0479592f969aab0564,
+  m_Shader: {fileID: -6465566751694194690, guid: dedfc20e1bfe1d340a3bb640680ab06b,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -52,8 +52,8 @@ Material:
     - _Smoothness: 1
     - _Strength: 0.1
     m_Colors:
-    - _Deep_Water_Color: {r: 0.039215684, g: 0.3019608, b: 0.284836, a: 0.6039216}
-    - _Shallow_Water_Color: {r: 0, g: 0.42352936, b: 0.3354699, a: 0.24705882}
+    - _Deep_Water_Color: {r: 0.007903162, g: 0.1132075, b: 0.0626614, a: 0.92156863}
+    - _Shallow_Water_Color: {r: 0.011764703, g: 0.14117648, b: 0.019434433, a: 0.8117647}
   m_BuildTextureStacks: []
 --- !u!114 &8674672261534347927
 MonoBehaviour:

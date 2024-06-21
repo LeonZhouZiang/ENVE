@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: River
-  m_Shader: {fileID: -6465566751694194690, guid: 8b882f59d7eaca0479592f969aab0564,
+  m_Shader: {fileID: -6465566751694194690, guid: dedfc20e1bfe1d340a3bb640680ab06b,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -52,8 +52,8 @@ Material:
     - _Smoothness: 1
     - _Strength: 0.03
     m_Colors:
-    - _Deep_Water_Color: {r: 0.03765882, g: 0.2196078, b: 0.30196077, a: 0.2509804}
-    - _Shallow_Water_Color: {r: 0, g: 0.3607843, b: 0.4235294, a: 0.14901961}
+    - _Deep_Water_Color: {r: 0.08235294, g: 0.16470589, b: 0.1882353, a: 0.2509804}
+    - _Shallow_Water_Color: {r: 0.050980393, g: 0.18431373, b: 0.1882353, a: 0.14901961}
   m_BuildTextureStacks: []
 --- !u!114 &8674672261534347927
 MonoBehaviour:

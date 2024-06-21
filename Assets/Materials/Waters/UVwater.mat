@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UVwater
-  m_Shader: {fileID: -6465566751694194690, guid: 8b882f59d7eaca0479592f969aab0564,
+  m_Shader: {fileID: -6465566751694194690, guid: dedfc20e1bfe1d340a3bb640680ab06b,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -43,7 +43,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: -3.3
+    - _Depth: -0.15
     - _Displacement: 0.005
     - _FlowDirection: 0.1
     - _Normal_Strength: 0.246
@@ -52,8 +52,8 @@ Material:
     - _Smoothness: 1
     - _Strength: 0.1
     m_Colors:
-    - _Deep_Water_Color: {r: 0.039215684, g: 0.21831149, b: 0.3019608, a: 0.25490198}
-    - _Shallow_Water_Color: {r: 0, g: 0.3620579, b: 0.42352942, a: 0.14901961}
+    - _Deep_Water_Color: {r: 0.08235294, g: 0.16470589, b: 0.1882353, a: 0.78039217}
+    - _Shallow_Water_Color: {r: 0.050980393, g: 0.18431373, b: 0.1882353, a: 0.49019608}
   m_BuildTextureStacks: []
 --- !u!114 &8674672261534347927
 MonoBehaviour:

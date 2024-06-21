@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NewWater
-  m_Shader: {fileID: -6465566751694194690, guid: 8b882f59d7eaca0479592f969aab0564,
+  m_Shader: {fileID: -6465566751694194690, guid: dedfc20e1bfe1d340a3bb640680ab06b,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
