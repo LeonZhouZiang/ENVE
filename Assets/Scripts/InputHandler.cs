@@ -11,6 +11,8 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private float transitionTime;
     [SerializeField] private Material normalSkyBox, blankSkyBox;
     [SerializeField] private FlowController flowController;
+    [SerializeField] private Material pipeMaterial, clearMaterial;
+    [SerializeField] private string[] pipeGroupNames;
     private int numCams;
     private int currentCam = 0;
     private GameObject[] cams;
@@ -196,7 +198,34 @@ public class InputHandler : MonoBehaviour
 
         for (int i = 0; i < wwtp.transform.childCount; i++)
         {
-            wwtp.transform.GetChild(i).gameObject.SetActive(true);
+            GameObject temp = wwtp.transform.GetChild(i).gameObject;
+            if (temp.name != "Pipes")
+            {
+                temp.SetActive(true);
+            }
+            else
+            {
+                // Makes all pipes visible
+                for (int j = 0; j < temp.transform.childCount; j++)
+                {
+                    Transform pipeParent = temp.transform.GetChild(j);
+                    for (int k = 0; k < pipeParent.childCount; k++)
+                    {
+                        MeshRenderer pipeMesh;
+                        // Clarifier pipes don't have a mesh renderer, so this skips those
+                        pipeParent.GetChild(k).TryGetComponent<MeshRenderer>(out pipeMesh);
+                        if (pipeMesh)
+                        {
+                            pipeMesh.material = pipeMaterial;
+                            // Accounts for valves, which have the valve wheel as a child of the pipe game object
+                            if (pipeMesh.gameObject.transform.childCount > 0)
+                            {
+                                pipeMesh.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material = pipeMaterial;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -211,7 +240,33 @@ public class InputHandler : MonoBehaviour
             for (int i = 0; i < wwtp.transform.childCount; i++)
             {
                 GameObject temp = wwtp.transform.GetChild(i).gameObject;
-                wwtp.transform.GetChild(i).gameObject.SetActive(false);
+                if (temp.name != "Pipes")
+                {
+                    temp.SetActive(false);
+                }
+                else
+                {
+                    // Makes all pipes clear
+                    for (int j = 0; j < temp.transform.childCount; j++)
+                    {
+                        Transform pipeParent = temp.transform.GetChild(j);
+                        for (int k = 0; k < pipeParent.childCount; k++)
+                        {
+                            MeshRenderer pipeMesh;
+                            // Clarifier pipes don't have a mesh renderer, so this skips those
+                            pipeParent.GetChild(k).TryGetComponent<MeshRenderer>(out pipeMesh);
+                            if (pipeMesh)
+                            {
+                                pipeMesh.material = clearMaterial;
+                                // Accounts for valves, which have the valve wheel as a child of the pipe game object
+                                if (pipeMesh.gameObject.transform.childCount > 0)
+                                {
+                                    pipeMesh.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material = clearMaterial;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlowController : MonoBehaviour
 {
     private ArrayList pipes = new ArrayList();
+    private ArrayList pipeGroups = new ArrayList();
     private bool visible = false;
     [SerializeField] private GameObject visualizationBall;
     private GameObject ballParent;
@@ -22,6 +23,7 @@ public class FlowController : MonoBehaviour
         ballParent.name = "VisualizationBallParent";
 
         Invoke("CollectStartingPipes", 0.2f);
+        Invoke("CollectPipeGroups", 0.2f);
         Invoke("InitializeSpeed", 2.5f);
     }
 
@@ -44,6 +46,47 @@ public class FlowController : MonoBehaviour
     private void InitializeSpeed()
     {
         speed = startingSpeed;
+    }
+
+    private void CollectPipeGroups()
+    {
+        GameObject[] allPipes = GameObject.FindGameObjectsWithTag("Pipe");
+        foreach (GameObject p in allPipes)
+        {
+            int idNumber = int.Parse(p.name);
+            int group = idNumber / 10000;
+
+            if (pipeGroups.Count < group)
+            {
+                for (int i = pipeGroups.Count; i < group; i++)
+                {
+                    pipeGroups.Add(new ArrayList());
+                }
+            }
+
+            ArrayList pipeGroup = (ArrayList)pipeGroups[group - 1];
+            pipeGroup.Add(p);
+        }
+    }
+
+    private void PrintPipeGroups()
+    {
+        for (int i = 0; i < pipeGroups.Count; i++)
+        {
+            ArrayList pipeGroup = (ArrayList)pipeGroups[i];
+            for (int j = 0; j < pipeGroup.Count; j++)
+            {
+                GameObject pipe = (GameObject)pipeGroup[j];
+                Debug.Log(pipe.name);
+            }
+        }
+    }
+
+    public ArrayList GetPipeGroup(int group)
+    {
+        group--;
+        ArrayList pipeGroup = (ArrayList)pipeGroups[group];
+        return pipeGroup;
     }
 
     // Looks at all the pipes in the scene and creates an array list of only the starting pipes in a section
