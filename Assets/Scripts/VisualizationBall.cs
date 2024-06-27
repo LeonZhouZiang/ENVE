@@ -9,6 +9,7 @@ public class VisualizationBall : MonoBehaviour
     private float speed = 10;
     private bool visible = false;
     [SerializeField] private MeshRenderer mr;
+    private int pipeGroupNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -56,5 +57,10 @@ public class VisualizationBall : MonoBehaviour
             leftover = distanceTraveled - distanceBetweenPositions;
         }
         Destroy(gameObject);
+    }
+
+    public void SetGroupNumber(int val)
+    {
+        pipeGroupNumber = val;
     }
 }
