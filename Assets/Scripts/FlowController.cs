@@ -25,6 +25,7 @@ public class FlowController : MonoBehaviour
         Invoke("CollectStartingPipes", 0.2f);
         Invoke("CollectPipeGroups", 0.2f);
         Invoke("InitializeSpeed", 2.5f);
+        Invoke("PrintPipeGroups", 5f);
     }
 
     private void Update()
@@ -145,8 +146,11 @@ public class FlowController : MonoBehaviour
         foreach (Object pipeObject in pipes)
         {
             GameObject pipe = (GameObject)pipeObject;
+            int idNumber = int.Parse(pipe.name);
+            int group = idNumber / 10000;
 
             GameObject ballInstance = Instantiate(visualizationBall, ballParent.transform);
+            ballInstance.GetComponent<VisualizationBall>().SetGroupNumber(group);
 
             if (visible)
             {

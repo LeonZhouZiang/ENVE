@@ -52581,6 +52581,7 @@ MonoBehaviour:
   - Secondary Clarifier Sludge Return
   - Secondary Clarifier to UV
   - UV to River
+  pipeGroupText: {fileID: 89888890}
 --- !u!4 &1384298362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 228864083906307571, guid: 36909e064e2001541a1625f1a11cc6ff,

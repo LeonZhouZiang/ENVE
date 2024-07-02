@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InputHandler : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private FlowController flowController;
     [SerializeField] private Material pipeMaterial, clearMaterial;
     [SerializeField] private string[] pipeGroupNames;
+    [SerializeField] private TextMeshProUGUI pipeGroupText;
     private int numCams;
     private int currentCam = 0;
     private GameObject[] cams;
     private bool changingCameras;
     private bool terrainEnabled = true;
+    private int currentPipeGroupSelection = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class InputHandler : MonoBehaviour
         {
             cams[i] = cameraParent.transform.GetChild(i).gameObject;
         }
+        pipeGroupText.text = pipeGroupNames[currentPipeGroupSelection];
     }
 
     // Update is called once per frame
@@ -71,6 +75,14 @@ public class InputHandler : MonoBehaviour
             {
                 ToggleFlowVisuals();
             }
+            else if (Input.GetKeyDown(KeyCode.J))
+            {
+                ChangePipeGroupSelection(-1);
+            }
+            else if (Input.GetKeyDown(KeyCode.L))
+            {
+                ChangePipeGroupSelection(1);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -81,21 +93,92 @@ public class InputHandler : MonoBehaviour
 
     private void TogglePipelines()
     {
-        GameObject[] pipes = GameObject.FindGameObjectsWithTag("Pipe");
-        foreach (GameObject p in pipes)
+        if (currentPipeGroupSelection == 0)
         {
-            p.GetComponent<LineRenderer>().enabled = !p.GetComponent<LineRenderer>().enabled;
+            GameObject[] pipes = GameObject.FindGameObjectsWithTag("Pipe");
+            // If every pipe is enabled, disable, otherwise enable all pipes
+            bool allPipesEnabled = true;
+            foreach (GameObject p in pipes)
+            {
+                if (!p.GetComponent<LineRenderer>().enabled)
+                {
+                    allPipesEnabled = false;
+                    break;
+                }
+            }
+            if (allPipesEnabled)
+            {
+                foreach (GameObject p in pipes)
+                {
+                    p.GetComponent<LineRenderer>().enabled = !p.GetComponent<LineRenderer>().enabled;
+                }
+            }
+            else
+            {
+                foreach (GameObject p in pipes)
+                {
+                    if (!p.GetComponent<LineRenderer>().enabled)
+                    {
+                        p.GetComponent<LineRenderer>().enabled = !p.GetComponent<LineRenderer>().enabled;
+                    }
+                }
+            }
+        }
+        else
+        {
+            ArrayList pipeGroup = flowController.GetPipeGroup(currentPipeGroupSelection);
+            foreach (Object p in pipeGroup)
+            {
+                GameObject currentPipe = (GameObject)p;
+                currentPipe.GetComponent<LineRenderer>().enabled = !currentPipe.GetComponent<LineRenderer>().enabled;
+            }
         }
     }
 
     private void ToggleFlowVisuals()
     {
         GameObject[] balls = GameObject.FindGameObjectsWithTag("VisualizationBall");
-        foreach (GameObject b in balls)
+        // If every group is enabled, disable, otherwise enable groups
+        if (currentPipeGroupSelection == 0)
         {
-            b.GetComponent<VisualizationBall>().ToggleVisibility();
+            bool allGroupsEnabled = true;
+            foreach (GameObject ball in balls)
+            {
+                if (!ball.GetComponent<VisualizationBall>().GetVisiblility())
+                {
+                    allGroupsEnabled = false;
+                    break;
+                }
+            }
+            if (allGroupsEnabled)
+            {
+                foreach (GameObject ball in balls)
+                {
+                    ball.GetComponent<VisualizationBall>().ToggleVisibility();
+                }
+            }
+            else
+            {
+                foreach (GameObject ball in balls)
+                {
+                    if (!ball.GetComponent<VisualizationBall>().GetVisiblility())
+                    {
+                        ball.GetComponent<VisualizationBall>().ToggleVisibility();
+                    }
+                }
+            }
         }
-        flowController.ToggleVisibility();
+        else
+        {
+            foreach (GameObject b in balls)
+            {
+                if (b.GetComponent<VisualizationBall>().GetGroupNumber() == currentPipeGroupSelection)
+                {
+                    b.GetComponent<VisualizationBall>().ToggleVisibility();
+                }
+            }
+            flowController.ToggleVisibility();
+        }
     }
 
     // True goes to next camera, False goes to previous camera
@@ -287,5 +370,26 @@ public class InputHandler : MonoBehaviour
                 RenderSettings.skybox = blankSkyBox;
             }
         }
+    }
+
+    private void ChangePipeGroupSelection(int val)
+    {
+        if (val == 1)
+        {
+            currentPipeGroupSelection++;
+            if (currentPipeGroupSelection == pipeGroupNames.Length)
+            {
+                currentPipeGroupSelection = 0;
+            }
+        }
+        else if (val == -1)
+        {
+            currentPipeGroupSelection--;
+            if (currentPipeGroupSelection == -1)
+            {
+                currentPipeGroupSelection = pipeGroupNames.Length - 1;
+            }
+        }
+        pipeGroupText.text = pipeGroupNames[currentPipeGroupSelection];
     }
 }

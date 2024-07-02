@@ -27,6 +27,16 @@ public class VisualizationBall : MonoBehaviour
         speed = val;
     }
 
+    public bool GetVisiblility()
+    {
+        return visible;
+    }
+
+    public int GetGroupNumber()
+    {
+        return pipeGroupNumber;
+    }
+
     public void ToggleVisibility()
     {
         if (visible)
