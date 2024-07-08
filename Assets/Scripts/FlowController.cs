@@ -6,12 +6,12 @@ public class FlowController : MonoBehaviour
 {
     private ArrayList pipes = new ArrayList();
     private ArrayList pipeGroups = new ArrayList();
-    private bool visible = false;
     [SerializeField] private GameObject visualizationBall;
     private GameObject ballParent;
     [SerializeField] private float startingSpeed = 10;
     private float speed = 100;
     private float previousSpeed;
+    private ArrayList visible = new ArrayList();
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +108,7 @@ public class FlowController : MonoBehaviour
                     if (p.IsStartingPipe())
                     {
                         pipes.Add(currentPipe);
+                        visible.Add(false);
                     }
                     continue;
                 }
@@ -119,6 +120,7 @@ public class FlowController : MonoBehaviour
                     if (t.IsReversed())
                     {
                         pipes.Add(currentPipe);
+                        visible.Add(false);
                     }
                     continue;
                 }
@@ -143,16 +145,16 @@ public class FlowController : MonoBehaviour
     // Spawns one ball for every starting pipe
     private void SpawnVisualizationBalls()
     {
-        foreach (Object pipeObject in pipes)
+        for (int i = 0; i < pipes.Count; i++)
         {
-            GameObject pipe = (GameObject)pipeObject;
+            GameObject pipe = (GameObject)pipes[i];
             int idNumber = int.Parse(pipe.name);
             int group = idNumber / 10000;
 
             GameObject ballInstance = Instantiate(visualizationBall, ballParent.transform);
             ballInstance.GetComponent<VisualizationBall>().SetGroupNumber(group);
 
-            if (visible)
+            if ((bool)visible[i])
             {
                 ballInstance.GetComponent<VisualizationBall>().ToggleVisibility();
             }
@@ -177,8 +179,19 @@ public class FlowController : MonoBehaviour
     }
 
     // Determines the initial visibility state for newly spawned balls
-    public void ToggleVisibility()
+    public void ToggleVisibility(int val)
     {
-        visible = !visible;
+        visible[val] = !(bool)visible[val];
+    }
+
+    public void SetAllVisibility(bool val)
+    {
+        for (int i = 0; i < visible.Count; i++)
+        {
+            if ((bool)visible[i] != val)
+            {
+                visible[i] = val;
+            }
+        }
     }
 }

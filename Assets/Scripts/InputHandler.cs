@@ -156,6 +156,7 @@ public class InputHandler : MonoBehaviour
                 {
                     ball.GetComponent<VisualizationBall>().ToggleVisibility();
                 }
+                flowController.SetAllVisibility(false);
             }
             else
             {
@@ -166,6 +167,7 @@ public class InputHandler : MonoBehaviour
                         ball.GetComponent<VisualizationBall>().ToggleVisibility();
                     }
                 }
+                flowController.SetAllVisibility(true);
             }
         }
         else
@@ -177,7 +179,7 @@ public class InputHandler : MonoBehaviour
                     b.GetComponent<VisualizationBall>().ToggleVisibility();
                 }
             }
-            flowController.ToggleVisibility();
+            flowController.ToggleVisibility(currentPipeGroupSelection - 1);
         }
     }
 
