@@ -73,4 +73,9 @@ public class VisualizationBall : MonoBehaviour
     {
         pipeGroupNumber = val;
     }
+
+    public void SetVisibleMaterial(Material m)
+    {
+        visibleMaterial = m;
+    }
 }

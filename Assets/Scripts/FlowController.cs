@@ -9,6 +9,8 @@ public class FlowController : MonoBehaviour
     [SerializeField] private GameObject visualizationBall;
     private GameObject ballParent;
     [SerializeField] private float startingSpeed = 10;
+    [SerializeField] private Material[] pipeLineColors;
+    [SerializeField] private Material[] visBallColors;
     private float speed = 100;
     private float previousSpeed;
     private ArrayList visible = new ArrayList();
@@ -67,6 +69,7 @@ public class FlowController : MonoBehaviour
 
             ArrayList pipeGroup = (ArrayList)pipeGroups[group - 1];
             pipeGroup.Add(p);
+            p.GetComponent<LineRenderer>().material = pipeLineColors[group];
         }
     }
 
@@ -153,8 +156,9 @@ public class FlowController : MonoBehaviour
 
             GameObject ballInstance = Instantiate(visualizationBall, ballParent.transform);
             ballInstance.GetComponent<VisualizationBall>().SetGroupNumber(group);
+            ballInstance.GetComponent<VisualizationBall>().SetVisibleMaterial(visBallColors[group]);
 
-            if ((bool)visible[i])
+            if ((bool)visible[group - 1])
             {
                 ballInstance.GetComponent<VisualizationBall>().ToggleVisibility();
             }
@@ -182,6 +186,17 @@ public class FlowController : MonoBehaviour
     public void ToggleVisibility(int val)
     {
         visible[val] = !(bool)visible[val];
+        GameObject[] visBalls = GameObject.FindGameObjectsWithTag("VisualizationBall");
+        foreach (GameObject v in visBalls)
+        {
+            if (v.GetComponent<VisualizationBall>().GetGroupNumber() - 1 == val)
+            {
+                if (v.GetComponent<VisualizationBall>().GetVisiblility() != (bool)visible[val])
+                {
+                    v.GetComponent<VisualizationBall>().ToggleVisibility();
+                }
+            }
+        }
     }
 
     public void SetAllVisibility(bool val)
