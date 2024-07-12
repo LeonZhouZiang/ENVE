@@ -5,9 +5,9 @@ using UnityEngine;
 public class ParticleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] particles;
-    [SerializeField] private Vector3 spawnpoint;
-    [SerializeField] private float randomness = .5f;
+    [SerializeField] private Vector3 origin;
     [SerializeField] private int numberOfParticles;
+    [SerializeField] private float minRadius, maxRadius;
     private GameObject p;
     private bool spawned = false;
 
@@ -26,7 +26,9 @@ public class ParticleSpawner : MonoBehaviour
             {
                 for (int i = 0; i < numberOfParticles; i++)
                 {
-                    GameObject c = Instantiate(particles[Random.Range(0, particles.Length)], spawnpoint + new Vector3(Random.Range(-randomness, randomness), Random.Range(-randomness, randomness), Random.Range(-randomness, randomness)), Quaternion.identity);
+                    
+                    Vector3 spawnpoint = origin + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized * Random.Range(minRadius, maxRadius);
+                    GameObject c = Instantiate(particles[Random.Range(0, particles.Length)], spawnpoint, Quaternion.identity);
                     c.transform.parent = p.transform;
                 }
             }

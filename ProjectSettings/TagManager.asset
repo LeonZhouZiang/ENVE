@@ -7,6 +7,7 @@ TagManager:
   - NoneTransparent
   - Pipe
   - VisualizationBall
+  - SludgeParticle
   layers:
   - Default
   - TransparentFX

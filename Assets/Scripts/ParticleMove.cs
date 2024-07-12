@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ParticleMove : MonoBehaviour
 {
-    [SerializeField] private float bouyancy = 10, drag = .95f, waterHeight = 1.5f;
+    [SerializeField] private float bouyancy = 10, drag = .95f, waterHeight = 1.5f, bouyancyFactor = 15;
     [SerializeField] private Vector2 flowForce = Vector2.zero;
+    [SerializeField] private bool enableJitterReduction = true;
 
     private void OnTriggerStay(Collider other)
     {
@@ -14,7 +15,11 @@ public class ParticleMove : MonoBehaviour
         if (rb && p && p.PhysicsAreEnabled())
         {
             rb.velocity *= drag;
-            if (other.transform.position.y < waterHeight)
+            if (Mathf.Abs(other.transform.position.y - waterHeight) < .1f && enableJitterReduction)
+            {
+                rb.AddForce(new Vector3(flowForce.x, bouyancy * bouyancyFactor * (waterHeight - other.transform.position.y), flowForce.y));
+            }
+            else if (other.transform.position.y < waterHeight)
             {
                 rb.AddForce(new Vector3(flowForce.x, bouyancy, flowForce.y));
             }

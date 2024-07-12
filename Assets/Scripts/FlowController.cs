@@ -27,7 +27,6 @@ public class FlowController : MonoBehaviour
         Invoke("CollectStartingPipes", 0.2f);
         Invoke("CollectPipeGroups", 0.2f);
         Invoke("InitializeSpeed", 2.5f);
-        Invoke("PrintPipeGroups", 5f);
     }
 
     private void Update()
