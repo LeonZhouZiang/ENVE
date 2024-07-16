@@ -10,18 +10,21 @@ public class ParticleMove : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        Particle p = other.gameObject.GetComponent<Particle>();
-        if (rb && p && p.PhysicsAreEnabled())
+        if (!other.isTrigger)
         {
-            rb.velocity *= drag;
-            if (Mathf.Abs(other.transform.position.y - waterHeight) < .1f && enableJitterReduction)
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            Particle p = other.gameObject.GetComponent<Particle>();
+            if (rb && p && p.PhysicsAreEnabled())
             {
-                rb.AddForce(new Vector3(flowForce.x, bouyancy * bouyancyFactor * (waterHeight - other.transform.position.y), flowForce.y));
-            }
-            else if (other.transform.position.y < waterHeight)
-            {
-                rb.AddForce(new Vector3(flowForce.x, bouyancy, flowForce.y));
+                rb.velocity *= drag;
+                if (Mathf.Abs(other.transform.position.y - (waterHeight + .5f)) < .1f && enableJitterReduction)
+                {
+                    rb.AddForce(new Vector3(flowForce.x, bouyancy * bouyancyFactor * (waterHeight - other.transform.position.y), flowForce.y));
+                }
+                else if (other.transform.position.y < waterHeight)
+                {
+                    rb.AddForce(new Vector3(flowForce.x, bouyancy, flowForce.y));
+                }
             }
         }
     }

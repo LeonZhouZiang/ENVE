@@ -13,18 +13,6 @@ public class Particle : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
-    {
-        if (attractToSimilar)
-        {
-            GameObject[] similarParticles = GameObject.FindGameObjectsWithTag(gameObject.tag);
-            foreach(GameObject p in similarParticles)
-            {
-                rb.AddForce(((p.transform.position - transform.position).normalized * attractionStrength)/Mathf.Clamp((p.transform.position - transform.position).magnitude, 1, 100));
-            }
-        }
-    }
-
     public bool PhysicsAreEnabled()
     {
         return physicsEnabled;
@@ -38,5 +26,18 @@ public class Particle : MonoBehaviour
     public void DisablePhysics()
     {
         physicsEnabled = false;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (attractToSimilar)
+        {
+            GameObject p = other.gameObject;
+            if (p.tag == gameObject.tag)
+            {
+                Debug.Log(((p.transform.position - transform.position).normalized * attractionStrength) / Mathf.Clamp((p.transform.position - transform.position).magnitude, 1, 100));
+                rb.AddForce(((p.transform.position - transform.position).normalized * attractionStrength) / Mathf.Clamp((p.transform.position - transform.position).magnitude, 1, 100));
+            }
+        }
     }
 }
