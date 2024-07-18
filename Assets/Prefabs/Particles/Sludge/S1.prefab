@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed49781c91989914b85e1fffa8f74d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractToSimilar: 0
-  attractionStrength: 1
+  _attractToSimilar: 1
+  _attractionStrength: 0.1
 --- !u!135 &2212768152797254458
 SphereCollider:
   m_ObjectHideFlags: 0

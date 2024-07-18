@@ -5,12 +5,21 @@ using UnityEngine;
 public class Particle : MonoBehaviour
 {
     private bool physicsEnabled = true;
-    [SerializeField] private bool attractToSimilar;
-    [SerializeField] private float attractionStrength = 1;
-    private Rigidbody rb;
+
+    [SerializeField] private bool _attractToSimilar;
+    public bool attractToSimilar => _attractToSimilar;
+    [SerializeField] private float _attractionStrength = 1;
+    public float attractionStrength => _attractionStrength;
+
+    private Rigidbody _rb;
+    public Rigidbody rb => _rb;
+
+    private List<Particle> _nearbyParticles = new List<Particle>();
+    public List<Particle> nearbyParticles => _nearbyParticles;
+
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
 
     public bool PhysicsAreEnabled()
@@ -28,16 +37,23 @@ public class Particle : MonoBehaviour
         physicsEnabled = false;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (attractToSimilar)
+        Particle particle = other.GetComponentInParent<Particle>();
+        if (particle == null || _nearbyParticles.Contains(particle))
         {
-            GameObject p = other.gameObject;
-            if (p.tag == gameObject.tag)
-            {
-                Debug.Log(((p.transform.position - transform.position).normalized * attractionStrength) / Mathf.Clamp((p.transform.position - transform.position).magnitude, 1, 100));
-                rb.AddForce(((p.transform.position - transform.position).normalized * attractionStrength) / Mathf.Clamp((p.transform.position - transform.position).magnitude, 1, 100));
-            }
+            return;
         }
+        _nearbyParticles.Add(particle);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Particle particle = other.GetComponentInParent<Particle>();
+        if (particle == null)
+        {
+            return;
+        }
+        _nearbyParticles.Remove(particle);
     }
 }
