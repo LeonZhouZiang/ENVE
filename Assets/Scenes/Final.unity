@@ -8269,7 +8269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryParticles: {fileID: 13150640}
-  secondaryParticles: {fileID: 807609023}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
   particleSystemID: 3
@@ -12888,7 +12888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryParticles: {fileID: 13150640}
-  secondaryParticles: {fileID: 807609023}
+  secondaryParticles: {fileID: 0}
   crossSection: {fileID: 0}
   isCrossSection: 0
   particleSystemID: 3
