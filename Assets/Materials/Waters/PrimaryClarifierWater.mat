@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PrimaryClarifierWater
-  m_Shader: {fileID: -6465566751694194690, guid: dedfc20e1bfe1d340a3bb640680ab06b,
+  m_Shader: {fileID: -6465566751694194690, guid: 8117645e38d91bd4994670e28bf12a39,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -46,7 +46,7 @@ Material:
     - _Depth: 13.9
     - _Displacement: 0.005
     - _FlowDirection: 0.1
-    - _Normal_Strength: 0.246
+    - _Normal_Strength: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 1
