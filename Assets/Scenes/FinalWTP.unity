@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1799132, g: 0.22526483, b: 0.30668467, a: 1}
+  m_IndirectSpecularColor: {r: 0.17991304, g: 0.22526446, b: 0.30668405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12292,7 +12292,7 @@ Transform:
   m_GameObject: {fileID: 546497548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.4, y: -58, z: -92.903305}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46282,74 +46282,6 @@ Transform:
   - {fileID: 8572088313657200308}
   m_Father: {fileID: 393454774}
   m_LocalEulerAnglesHint: {x: 0, y: -54.3, z: 0}
---- !u!1001 &425987621669044417
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3842469269439370740, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_Name
-      value: SingleFlight
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 55.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621571012731581717, guid: 11cda4fd9431cc445aa68b3398cf5b67,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11cda4fd9431cc445aa68b3398cf5b67, type: 3}
 --- !u!1 &6596902507261095128
 GameObject:
   m_ObjectHideFlags: 0
@@ -46515,11 +46447,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8526033831412227412, guid: 335b20cfc93958b4a803138e2da8f778,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 8526033831412227412, guid: 335b20cfc93958b4a803138e2da8f778,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47988,15 +47915,14 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1380055279}
-  - {fileID: 286012159}
-  - {fileID: 1665964363}
-  - {fileID: 2019780602}
-  - {fileID: 351021241}
-  - {fileID: 8203368180189960158}
   - {fileID: 982421087}
   - {fileID: 546497549}
   - {fileID: 980849988}
   - {fileID: 393454774}
   - {fileID: 476321768}
   - {fileID: 1870263021}
-  - {fileID: 425987621669044417}
+  - {fileID: 286012159}
+  - {fileID: 1665964363}
+  - {fileID: 2019780602}
+  - {fileID: 351021241}
+  - {fileID: 8203368180189960158}
