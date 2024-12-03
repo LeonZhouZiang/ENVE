@@ -15,6 +15,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private Material pipeMaterial, clearMaterial;
     [SerializeField] private string[] pipeGroupNames;
     [SerializeField] private TextMeshProUGUI pipeGroupText;
+    [SerializeField] private GameObject rapidMixLid1, rapidMixLid2;
     private int numCams;
     private int currentCam = 0;
     private GameObject[] cams;
@@ -83,12 +84,22 @@ public class InputHandler : MonoBehaviour
             {
                 ChangePipeGroupSelection(1);
             }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                ToggleRapidMix();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
+    }
+
+    private void ToggleRapidMix()
+    {
+        rapidMixLid1.SetActive(!rapidMixLid1.activeSelf);
+        rapidMixLid2.SetActive(!rapidMixLid2.activeSelf);
     }
 
     private void TogglePipelines()
