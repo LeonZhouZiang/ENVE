@@ -6075,13 +6075,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223706705}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.20406899, z: 0, w: 0.9789566}
-  m_LocalPosition: {x: -34.16, y: 24.62, z: 133.39}
+  m_LocalRotation: {x: -0, y: -0.20406899, z: -0, w: 0.9789566}
+  m_LocalPosition: {x: -211.38358, y: 93.86576, z: 78.670334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 927492140}
-  m_Father: {fileID: 393454774}
+  m_Father: {fileID: 581308572}
   m_LocalEulerAnglesHint: {x: 0, y: -23.55, z: 0}
 --- !u!114 &223706707
 MonoBehaviour:
@@ -9923,17 +9923,13 @@ Transform:
   - {fileID: 1793653872}
   - {fileID: 1632382606}
   - {fileID: 111845481}
-  - {fileID: 434135706}
   - {fileID: 2075138259}
   - {fileID: 605395952}
-  - {fileID: 223706706}
   - {fileID: 233517531}
   - {fileID: 349938527}
-  - {fileID: 1206803688}
   - {fileID: 1730885579}
   - {fileID: 939524865}
   - {fileID: 489832739}
-  - {fileID: 1620464729}
   - {fileID: 1752465296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11197,13 +11193,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434135705}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.45632148, z: 0, w: 0.889815}
-  m_LocalPosition: {x: -62, y: 22.6, z: 46.6}
+  m_LocalRotation: {x: -0, y: -0.45632148, z: -0, w: 0.889815}
+  m_LocalPosition: {x: -239.22357, y: 91.84576, z: -8.119663}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1720265217}
-  m_Father: {fileID: 393454774}
+  m_Father: {fileID: 581308572}
   m_LocalEulerAnglesHint: {x: 0, y: -54.3, z: 0}
 --- !u!114 &434135707
 MonoBehaviour:
@@ -15417,6 +15413,41 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &581308571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581308572}
+  m_Layer: 0
+  m_Name: UnusedCameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &581308572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581308571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 177.22357, y: -69.24576, z: 54.71966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 434135706}
+  - {fileID: 223706706}
+  - {fileID: 1206803688}
+  - {fileID: 1620464729}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588031788
 GameObject:
   m_ObjectHideFlags: 0
@@ -30396,13 +30427,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206803687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.37864852, z: 0, w: 0.92554057}
-  m_LocalPosition: {x: 86.07, y: 7.6, z: 241.94}
+  m_LocalRotation: {x: -0, y: 0.37864852, z: -0, w: 0.92554057}
+  m_LocalPosition: {x: -91.15357, y: 76.84576, z: 187.22034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1575791322}
-  m_Father: {fileID: 393454774}
+  m_Father: {fileID: 581308572}
   m_LocalEulerAnglesHint: {x: 0, y: 44.5, z: 0}
 --- !u!114 &1206803689
 MonoBehaviour:
@@ -40601,13 +40632,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620464728}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.97850895, z: 0, w: 0.20620431}
-  m_LocalPosition: {x: 271.2, y: -11.6, z: -66.54}
+  m_LocalRotation: {x: -0, y: 0.97850895, z: -0, w: 0.20620431}
+  m_LocalPosition: {x: 93.97644, y: 57.64576, z: -121.25966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 757632979}
-  m_Father: {fileID: 393454774}
+  m_Father: {fileID: 581308572}
   m_LocalEulerAnglesHint: {x: 0, y: 156.2, z: 0}
 --- !u!114 &1620464730
 MonoBehaviour:
@@ -55475,3 +55506,4 @@ SceneRoots:
   - {fileID: 1870263021}
   - {fileID: 1075048838}
   - {fileID: 908708777}
+  - {fileID: 581308572}

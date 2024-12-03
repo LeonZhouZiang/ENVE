@@ -8,6 +8,7 @@ TagManager:
   - Pipe
   - VisualizationBall
   - SludgeParticle
+  - SceneSwitcher
   layers:
   - Default
   - TransparentFX

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalWWTP.unity
     guid: 48c467f743a746d44ae61f5cc97e08c5
+  - enabled: 1
+    path: Assets/Scenes/FinalWTP.unity
+    guid: 1b7e32d97227e034c86a9937033974e1
   m_configObjects: {}
